@@ -1,10 +1,8 @@
 {
   "name": "myapp",
-  "homepage": "https://aman1chaudhary.github.io/pdc-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "next build && next export && npx gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

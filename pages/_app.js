@@ -7,7 +7,7 @@ import '../styles/responsive.css'
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <GoogleOAuthProvider clientId="503740099223-aufl1dd9v9rdi05hqua6k8o1cr85uiq8.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="191629708651-ct4hu14qejdlrt9nja0ne6l8tj3is8gs.apps.googleusercontent.com">
         <Navbar />
         <Component {...pageProps} />
         <Footer />

@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import ImageCarousel from '../components/ImageCarousel';
 import Link from 'next/link';
 import Image from 'next/image';
-import bg from '../public/assets/images/banner-1.jpg'
 
 export default function Home() {
   useEffect(() => {
@@ -23,7 +22,6 @@ export default function Home() {
       <main>
 
       </main>
-      {/* style={{ background: `rgba(0, 0, 0, 0.6) url(${bg})` }} */}
       <header id='head' >
         <div className="banner-content">
           <h1>Professional Development Council</h1>

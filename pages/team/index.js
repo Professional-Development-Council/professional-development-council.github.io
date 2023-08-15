@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import Head from "next/head";
 import Image from "next/image";
 
-const team = () => {
+const Team = () => {
     useEffect(() => {
         AOS.init();
     }, [])
@@ -70,4 +70,4 @@ const team = () => {
     )
 }
 
-export default team
+export default Team

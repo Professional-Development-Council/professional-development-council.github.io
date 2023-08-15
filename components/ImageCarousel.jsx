@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Papa from "papaparse";
+import Image from 'next/image';
 
 function ImageCarousel() {
     const [data, setData] = useState([]);
@@ -29,7 +30,7 @@ function ImageCarousel() {
                                 <div className='col-md-4' key={index}>
                                     <div className="card-item">
                                         <div className="card-item-img">
-                                        <a href={item.ArticleLink} target="_blank" rel="noreferrer"> <img src={item.ImageLink} alt='item' /></a>
+                                        <a href={item.ArticleLink} target="_blank" rel="noreferrer"> <Image className='Image-general' src={item.ImageLink} alt='item' width={100} height={100}/></a>
                                         </div>
                                         <div className="card-item-content">
                                             <a href={item.ArticleLink} target="_blank" rel="noreferrer"> <p>{item.Title}</p></a>

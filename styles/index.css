@@ -45,7 +45,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.6) url("../public/assets/images/banner-1.jpg");
+  background: rgba(0, 0, 0, 0.6) url("/assets/images/banner-1.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -80,7 +80,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.4) url("../public/assets//images/banner-2.jpg");
+  background: rgba(0, 0, 0, 0.4) url("/assets//images/banner-2.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import ImageCarousel from '../components/ImageCarousel';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import bg from '../public/assets/images/banner-1.jpg'
 
 export default function Home() {
   useEffect(() => {
@@ -23,7 +23,8 @@ export default function Home() {
       <main>
 
       </main>
-      <header id="head">
+      {/* style={{ background: `rgba(0, 0, 0, 0.6) url(${bg})` }} */}
+      <header id='head' >
         <div className="banner-content">
           <h1>Professional Development Council</h1>
         </div>
@@ -40,11 +41,11 @@ export default function Home() {
             <div className="row">
               <div className="col-md-8">
                 <p>
-                  <p>
-                    <p>
+
+
                       Professional Development Council (PDC) is a dedicated division within the student council that strives to provide the student body with a structured framework for overall professional development. PDC dedicates its work to helping college students develop the skills and knowledge they need to succeed in their professional careers. The council is responsible for spreading awareness about developing professional skills and providing opportunities to enhance and test their skills. Apart from developing professional skills, PDC also acts as a medium of direct communication between <a href="https://cds.iitgn.ac.in/" target="_blank" rel="noreferrer"> <strong> Career Development Services (CDS)</strong></a>, the institute&apos;s placement cell, and the student body by facilitating feedback from companies to students and various concerns and grievances of the student body. PDC also aims to raise awareness among the student body and assist them in achieving career independence. Through informational sessions featuring alums and other professionals, workshops on resume building and interview preparation, and mock tests, PDC provides the support and resources necessary for students to achieve their dream jobs.
-                      Join us in our mission to promote professional development and achieve success in your chosen career path.</p>
-                  </p>
+                      Join us in our mission to promote professional development and achieve success in your chosen career path.
+
                 </p>
 
 

@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 const Blogs = () => {
     useEffect(() => {
@@ -30,7 +31,7 @@ const Blogs = () => {
                                 <div className='col-md-4' key={index}>
                                     <div className="card-item" data-aos="fade-up">
                                         <div className="card-item-img">
-                                            <img src={item.image} alt='item' />
+                                            <Image  className='Image-general' src={item.image} alt='item' width={100} height={100}/>
                                         </div>
                                         {item.Tags.map((tags,index) => {
                                             return (
@@ -44,7 +45,7 @@ const Blogs = () => {
 
                                             <div className="card__footer">
                                                 <div className="user">
-                                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHw%3D&w=1000&q=80" alt="user__image" className="user__image" />
+                                                    <Image src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHw%3D&w=1000&q=80" alt="user__image" className="user__image Image-general" width={100} height={100} />
                                                     <div className="user__info">
                                                         <p>{item.author}</p>
                                                         <small>{item.date}</small>

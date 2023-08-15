@@ -65,8 +65,7 @@ export default function Home() {
 
           <ImageCarousel />
           <div className="announcements-btn">
-            <a href='https://iitgn.ac.in/' target='_blank' rel="noreferrer">
-              <Link href="/events"><button className='read-button'>Read More</button></Link></a>
+              <Link href="/events"><button className='read-button'>Read More</button></Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BlogsData } from '../../data/BlogsData'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const BlogsDetails = () => {
     const Router = useRouter()
@@ -46,7 +47,7 @@ const BlogsDetails = () => {
 
                         </div>
                         <div className="col-md-6">
-                            <img src={Blog.image} alt="event" />
+                            <Image className='Image-general' src={Blog.image} alt="event" width={100} height={100} />
 
 
                         </div>

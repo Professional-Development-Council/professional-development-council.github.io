@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
-
+import Image from "next/image";
+import Annuity_club from "../public/assets/images/Annuity_club.jpeg"
 
 
 const Clubs = () => {
@@ -47,7 +48,7 @@ const Clubs = () => {
 
             </div>
             <div className="col-md-6">
-              <img src="https://corp.smartbrief.com/wp-content/uploads/2020/07/AdobeStock_331489342-scaled.jpeg" alt="Club Logo" />
+              <Image src={Annuity_club} className="Image-general" alt="Club Logo" />
             </div>
           </div>
 

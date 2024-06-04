@@ -4,12 +4,11 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import '../styles/index.css'
 import '../styles/responsive.css'
 
-// PG CLIENT_ID - 481922227153-kbtp7vbmkvmvj0jnmvlta46rno1m4lig.apps.googleusercontent.com
-// AC CLIENT_ID - 191629708651-ct4hu14qejdlrt9nja0ne6l8tj3is8gs.apps.googleusercontent.com
 function MyApp({ Component, pageProps }) {
+  const clientId = process.env.NEXT_PUBLIC_PG_CLIENT_ID;
   return (
     <div>
-      <GoogleOAuthProvider clientId="481922227153-kbtp7vbmkvmvj0jnmvlta46rno1m4lig.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={clientId}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />

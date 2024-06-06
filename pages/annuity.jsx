@@ -20,6 +20,7 @@ const Clubs = () => {
       </Head>
       <header id="page-header">
         <div className="page-heading">
+          <img src="./assets/images/annuity-logo.png" alt="Logo" style={{ width: '100px' }} />
           <h2>Annuity Club</h2>
         </div>
       </header>
@@ -34,22 +35,44 @@ const Clubs = () => {
               </div>
 
               <div className="para-contaent">
-                <p>Annuity Club is a student-run finance club that aims to develop and cultivate an interest in finance among students by providing a platform for learning and exploration. Finance has a significant impact on every other sector, and with the advent of technology, its applications have become more varied. We believe students must understand how technology changes the finance industry and how they can leverage it to make better investment decisions. To this end, we organize workshops and training sessions on algorithmic trading to help students understand how it works and how to apply it in real-world scenarios.</p>
+                <p>Finance remains one of the few non-core engineering fields that interest students a lot. However, due to the short number of courses available at IITGN and the caps that they have, a lot of people fail to explore this field in detail. The IIT Gandhinagar community has many finance enthusiasts, however, we lack a platform that would serve as a promoter of these interests and developing curiosity. With a view to establishing a peer-assisted learning environment for learning and exploring different domains of finance, including but not restricted to budgeting, stocks, trading, etc, Annuity serves as the Finance Club of IIT Gandhinagar.</p>
               </div>
               <div className="para-contaent">
-                <p>We aim to provide a peer-assisted learning environment where students can discuss and analyze different aspects of finance, including budgeting, stocks, trading, and more. To achieve this, we organize various events and workshops that provide students with opportunities to learn about finance and its applications. We also invite experts from the finance industry to speak to our members and share their experiences and insights. Our club members participate in various competitions and projects related to finance to gain practical experience and apply their knowledge in real-world situations.
-</p>
-              </div>
-              <div className="para-contaent">
-                <p>Our club also envisions creating student-run funds to provide hands-on experience in managing investments and creating portfolios. This will help students develop practical skills in finance and enhance their understanding of the industry.
-</p>
+                <p>Finance is one of the few sectors of the world that have an impact on every other sector. It is thus necessary to get students acquainted with at least a basic understanding of the subject. We believe we can achieve this through the structure of a club, which promotes peer-assisted learning and gaining a taste of the applications of finance in the real world by participating in events and workshops.
+                </p>
               </div>
 
 
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ marginBottom: '2rem' }}>
               <Image src={Annuity_club} className="Image-general" alt="Club Logo" />
             </div>
+          </div>
+          <div className="para-contaent">
+            <p>Club members will find themselves immersed in a rich tapestry of opportunities to engage with a diverse array of individuals, from fellow students and esteemed alumni to seasoned professionals within the finance sector. From delving into the fundamentals of corporate finance to unraveling the intricacies of stock market dynamics, members will traverse a comprehensive landscape of financial knowledge. Workshops and events dedicated to finance basics, such as understanding financial statements and valuation techniques, will serve as foundational pillars in their learning journey. Furthermore, the exploration of recent trends in the stock market and quant trading will provide members with a nuanced understanding of contemporary financial landscapes. As active participants in organizing and hosting finance-related activities, members will not only refine their leadership skills but will contribute to the dissemination of financial literacy within the IITGN community.
+            </p>
+          </div>
+          <div className="para-contaent">
+            <p style={{ fontWeight: '500', marginBottom: '5px' }}><span style={{ fontWeight: '600' }}>Annuity Secretary:</span> Samyak Gosalia
+            </p>
+            <p style={{ fontWeight: '500' }}><span style={{ fontWeight: '600' }}>Annuity Co-ordinator:</span> Farhan Obaid
+            </p>
+          </div>
+          <div className="footer-social-icon">
+            <div className="footer-widget-heading">
+              <h3 style={{color: 'black'}}>Follow us</h3>
+            </div>
+            <ul className="social_icon">
+              <li><a href="https://www.instagram.com/annuity_iitgn?igsh=dWx1N2E1b3l4aGVn" target="_blank" rel="noreferrer">
+                <i className="fab fa-instagram" style={{ fontSize: '22px' }}></i></a>
+              </li>
+              {/* <li><a href="https://www.linkedin.com/company/professional-development-council-iit-gandhinagar/" target="_blank" rel="noreferrer">
+                <i className="fab fa-linkedin" style={{ fontSize: '22px' }}></i></a>
+              </li> */}
+              <li><a href="mailto:annuity@iitgn.ac.in" target="_blank" rel="noreferrer">
+                <i className="fas fa-envelope" style={{ fontSize: '22px' }}></i></a>
+              </li>
+            </ul>
           </div>
 
         </div>

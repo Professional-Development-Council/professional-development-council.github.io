@@ -38,8 +38,9 @@ const Footer = () => {
                     <li><Link href="/about" >About Us</Link></li>
                     <li><Link href="/events" >Events</Link></li>
                     {/* <li><Link href="/material/placement-talks" >Placement Talks Videos</Link></li> */}
-                    <li><Link href="/blogs" >Blogs</Link></li>
-                    <li><Link href="/clubs" >Clubs</Link></li>
+                    {/* <li><Link href="/blogs" >Blogs</Link></li> */}
+                    <li><Link href="/annuity" >Annuity</Link></li>
+                    <li><Link href="/tediitgn" >TEDxIITGandhinagar</Link></li>
                     <li><Link href="/team" >Our Team</Link></li>
                     <li><Link href="/contact" >Contact us</Link></li>
                   </ul>

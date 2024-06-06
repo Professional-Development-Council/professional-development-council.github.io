@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import Logo from "../public/assets/images/PDC IITGN.png"
+import Logo from "../public/assets/images/PDC IITGN.jpg"
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -66,7 +66,6 @@ const Navbar = () => {
   return (
     <div className='nav_container'>
       <div className="main_navbar">
-        <div className="nav-phone">
           <div className="nav-logo">
             <Link href="/" className="logo-image">
               <Image src={Logo} alt="logo" className='Image-general' />
@@ -76,7 +75,6 @@ const Navbar = () => {
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
 
-        </div>
 
 
         <div className={click ? "nav-menu nav-menu-active" : "nav-menu"}>
@@ -116,12 +114,12 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="nav-item">
+          {/* <div className="nav-item">
             <Link
               href="/blogs" className="nav-links" onClick={handleClick} >
               Blogs
             </Link>
-          </div>
+          </div> */}
 
           <div className="nav-item">
             <button className="nav-dropbtn">
@@ -153,9 +151,20 @@ const Navbar = () => {
           </div>
 
           <div className="nav-item">
-            <Link href="/clubs" className="nav-links" onClick={handleClick} >
-              Annuity Club
-            </Link>
+            <button className="nav-dropbtn">
+              Divisions <i className="fa fa-angle-down" aria-hidden="true"></i>
+            </button>
+
+            <div className="dropdown-content">
+              <Link href="/annuity" className="drop-nav-links">
+                Annuity Club
+              </Link>
+
+              <Link href="/tedxiitgn" className="drop-nav-links">
+                TEDxIITGandhinagar
+              </Link>
+
+            </div>
           </div>
 
           <div className="nav-item">

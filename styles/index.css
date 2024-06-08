@@ -121,9 +121,14 @@ a {
 }
 
 .team-area .item .thumb {
+  height: 300px;
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+.team-area .item .thumb img {
+  max-width: 100%;
 }
 
 .team-area .item .thumb::after {
@@ -178,14 +183,6 @@ a {
   text-transform: uppercase;
 }
 
-.team-area .item .thumb img {
-  -webkit-transition: all 0.35s ease-in-out;
-  -moz-transition: all 0.35s ease-in-out;
-  -ms-transition: all 0.35s ease-in-out;
-  -o-transition: all 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
-}
-
 .team-area .item:hover .thumb img {
   opacity: 0.6;
 }
@@ -196,7 +193,7 @@ a {
   -webkit-box-shadow: 0 0 10px #cccccc;
   -o-box-shadow: 0 0 10px #cccccc;
   box-shadow: 0 0 10px #cccccc;
-  padding: 40px 10px 10px;
+  padding: 40px 0px 10px;
   position: relative;
   text-align: center;
   z-index: 9;
@@ -204,13 +201,12 @@ a {
 
 .team-area .info .message {
   height: 50px;
-  line-height: 40px;
-  margin-left: -25px;
-  margin-top: -25px;
   position: absolute;
-  text-align: center;
-  top: 0;
-  width: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  top: -25px;
+  width: 100%;
 }
 
 .team-area .info .message a {
@@ -231,8 +227,8 @@ a {
   width: 50px;
 }
 
-.team-area .info .message a i {
-  font-weight: 500;
+.team-area .info .message a i{
+  line-height: 2;
 }
 
 .team-area .info h4 {

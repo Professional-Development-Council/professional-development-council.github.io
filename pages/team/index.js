@@ -31,12 +31,12 @@ const Team = () => {
                 <section id="team" className="team-area">
                     <div className="row team-items" >
 
-                        {TeamData.map((item,index) => {
+                        {TeamData.map((item, index) => {
                             return (
                                 <div className="col-md-3 single-item" key={index} data-aos="fade-up">
                                     <div className="item">
                                         <div className="thumb">
-                                            <Image className="Image-general img-fluid" src={item.image} alt="Thumb" />
+                                            <img className="team-image" src={item.image} alt="Thumb" />
                                             <div className="overlay">
                                                 <h4>{item.name}</h4>
                                                 <p>
@@ -47,11 +47,15 @@ const Team = () => {
                                         </div>
                                         <div className="info">
                                             <span className="message">
-                                                {item.email && (
-                                                    <a href={`mailto:${item.email}`}><i className="fas fa-envelope-open"></i></a>
-
+                                                {item.linkedin && (
+                                                    <a href={item.linkedin} target="_blank"><i className="fab fa-linkedin" style={{fontSize: "25px"}}></i></a>
                                                 )}
-
+                                                {item.email && (
+                                                    <a href={`mailto:${item.email}`} target="_blank"><i className="fas fa-envelope-open" style={{fontWeight: "500"}}></i></a>
+                                                )}
+                                                {item.github && (
+                                                    <a href={item.github} target="_blank"><i className="fab fa-github" style={{fontSize: "25px"}}></i></a>
+                                                )}
                                             </span>
                                             <h4>{item.name}</h4>
                                             <span>{item.position}</span>

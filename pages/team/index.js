@@ -29,7 +29,7 @@ const Team = () => {
 
 
                 <section id="team" className="team-area">
-                    <div className="row team-items" >
+                    <div className="row team-items" style={{justifyContent: "center"}}>
 
                         {TeamData.map((item, index) => {
                             return (

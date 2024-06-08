@@ -52,15 +52,55 @@ const Clubs = () => {
             <p>Club members will find themselves immersed in a rich tapestry of opportunities to engage with a diverse array of individuals, from fellow students and esteemed alumni to seasoned professionals within the finance sector. From delving into the fundamentals of corporate finance to unraveling the intricacies of stock market dynamics, members will traverse a comprehensive landscape of financial knowledge. Workshops and events dedicated to finance basics, such as understanding financial statements and valuation techniques, will serve as foundational pillars in their learning journey. Furthermore, the exploration of recent trends in the stock market and quant trading will provide members with a nuanced understanding of contemporary financial landscapes. As active participants in organizing and hosting finance-related activities, members will not only refine their leadership skills but will contribute to the dissemination of financial literacy within the IITGN community.
             </p>
           </div>
-          <div className="para-contaent">
-            <p style={{ fontWeight: '500', marginBottom: '5px' }}><span style={{ fontWeight: '600' }}>Annuity Secretary:</span> Samyak Gosalia
-            </p>
-            <p style={{ fontWeight: '500' }}><span style={{ fontWeight: '600' }}>Annuity Co-ordinator:</span> Farhan Obaid
-            </p>
-          </div>
+          <section id="team" className="team-area">
+            <div className="row team-items" style={{justifyContent: "center"}}>
+                  <div className="col-md-3 single-item" data-aos="fade-up">
+                    <div className="item">
+                      <div className="thumb">
+                        <img className="team-image" src="./assets/images/Samyak_Gosalia.jpg" alt="Thumb" />
+                        <div className="overlay">
+                          <h4>Samyak Gosalia</h4>
+                          <p>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="info">
+                        <span className="message">
+                            <a href="https://www.linkedin.com/in/samyak-gosalia-a42a20255/" target="_blank"><i className="fab fa-linkedin" style={{ fontSize: "25px" }}></i></a>
+                            <a href={`mailto:gosalia.samyak@iitgn.ac.in`} target="_blank"><i className="fas fa-envelope-open" style={{ fontWeight: "500" }}></i></a>
+                            <a href="https://github.com/Samyak312" target="_blank"><i className="fab fa-github" style={{ fontSize: "25px" }}></i></a>
+                        </span>
+                        <h4>Samyak Gosalia</h4>
+                        <span>Annuity Secretary</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3 single-item" data-aos="fade-up">
+                    <div className="item">
+                      <div className="thumb">
+                        <img className="team-image" src="./assets/images/Farhan_Obaid.jpg" alt="Thumb" />
+                        <div className="overlay">
+                          <h4>Farhan Obaid</h4>
+                          <p>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="info">
+                        <span className="message">
+                            <a href="https://www.linkedin.com/in/farhan-obaid-19b289262/" target="_blank"><i className="fab fa-linkedin" style={{ fontSize: "25px" }}></i></a>
+                            <a href={`mailto:farhan.obaid@iitgn.ac.in`} target="_blank"><i className="fas fa-envelope-open" style={{ fontWeight: "500" }}></i></a>
+                        </span>
+                        <h4>Farhan Obaid</h4>
+                        <span>Annuity Co-ordinator</span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+          </section>
           <div className="footer-social-icon">
             <div className="footer-widget-heading">
-              <h3 style={{color: 'black'}}>Follow us</h3>
+              <h3 style={{ color: 'black' }}>Follow us</h3>
             </div>
             <ul className="social_icon">
               <li><a href="https://www.instagram.com/annuity_iitgn?igsh=dWx1N2E1b3l4aGVn" target="_blank" rel="noreferrer">

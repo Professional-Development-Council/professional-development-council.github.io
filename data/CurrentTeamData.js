@@ -80,7 +80,7 @@ export const TeamData =[
   },
   {
     "name": "Chandrabhan Patel",
-    "image": "./assets/images/Chandrabhan_Patel.jpg",
+    "image": "./assets/images/Chandrabhan_Patel.JPG",
     "position": "Webmaster",
     "level": "Junior Undergraduate",
     "email": "chandrabhan.patel@iitgn.ac.in",

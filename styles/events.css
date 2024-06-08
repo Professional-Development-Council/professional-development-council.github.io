@@ -1,0 +1,87 @@
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .timeline-container {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-image {
+    margin-left: 20px;
+    flex: 0 0 auto;
+  }
+  
+  .timeline-content h3 {
+    margin-top: 0;
+  }
+  
+  .timeline-content p {
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .timeline-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  .timeline-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+  }
+  
+  .timeline-item:last-child:before {
+    height: 50%;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-item:before {
+    background-color: #007bff;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-item:before {
+    background-color: #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .timeline-image {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  

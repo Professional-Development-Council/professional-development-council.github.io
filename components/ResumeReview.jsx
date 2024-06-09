@@ -29,8 +29,8 @@ const ResumeReview = () => {
             <form name="submit-to-google-sheet" className="contact-us-form" data-form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Your Name" className="form-control" name="Name" required />
                 <input type="text" placeholder="Your Email" className="form-control" name="Email" required />
-                <label>Please don&apos;t forget to give us pdf edit/comment access</label>   
                 <input type="url" placeholder="Paste your PDF link here..." className="form-control" name="PDFLink" required />
+                <p style={({fontSize: "12px", color: "red"})}>*Please don&apos;t forget to give us pdf comment access</p>   
                 <button className="submit-button" type="submit" disabled={isLoading}>
                     {isLoading ? 'Uploading...' : 'Upload'}
                 </button>

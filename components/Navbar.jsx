@@ -174,6 +174,12 @@ const Navbar = () => {
           </div>
 
           <div className="nav-item">
+            <Link href="/resume_review" className="nav-links" onClick={handleClick} >
+              Resume Review
+            </Link>
+          </div>
+
+          <div className="nav-item">
             {profile ? (
               <div className='profile-img'>
                 <Image src={profile.picture} width={100} height={100} className='Image-general' alt="user profile" />

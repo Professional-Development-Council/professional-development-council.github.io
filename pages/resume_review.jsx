@@ -1,38 +1,44 @@
 import React from 'react'
-import ContactForm from '../components/ContactForm'
+import ResumeReview from '../components/ResumeReview'
 import Head from 'next/head'
 
 const Contact = () => {
   return (
     <div className='main-container'>
       <Head>
-        <title>Contact Us</title>
+        <title>Resume Review</title>
         <meta name="description" content="Professional Development Council" />
         <link rel="icon" href="/favicon.ico" />
 
       </Head>
       <header id="page-header">
         <div className="page-heading">
-          <h2>Contact Us</h2>
+          <h2>Resume Review</h2>
         </div>
       </header>
 
       <div className="page-container">
         <div className="section-heading">
-          <h1>Get in Touch!</h1>
+          <h1>Get your <b>Resume</b> reviewed!</h1>
         </div>
 
         <div className="row">
           <div className="col-md-6 single-item">
             <div className="contact-content">
-              <p>Contact our team for any inquiries, feedback, or partnership opportunities. We are here to answer any questions you may have and provide the necessary support to help you achieve your professional development goals.</p>
-              <p><strong>Email: </strong><a href='mailto:pdc.secretary@iitgn.ac.in'> pdc.secretary@iitgn.ac.in</a></p>
+              <p>
+              <b>Ready to land your dream job/internship?</b><br></br>
+            Our team of resume specialists understands the importance of standing out in today&apos;s 
+            competitive job market. We offer personalized feedback and expert guidance to help you craft a 
+            compelling resume that showcases your unique skills and accomplishments.  
+            By leveraging our insights, you can build a resume that effectively communicates your value proposition 
+            and grabs the attention of hiring managers.
+              </p>
 
             </div>
           </div>
           <div className="col-md-6 single-item">
 
-            <ContactForm />
+          <ResumeReview />
           </div>
         </div>
       </div>

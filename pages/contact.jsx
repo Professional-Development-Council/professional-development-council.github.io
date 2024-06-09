@@ -44,7 +44,7 @@ const Contact = () => {
         <div className="row">
           <div className="col-md-6 single-item">
             <div className="contact-content">
-              <p>Get insights and guidance for building successful resume's through our team.</p>
+              <p>Get insights and guidance for building successful resume&apos;s through our team.</p>
               {/* <p><strong>Email: </strong><a href='mailto:pdc.secretary@iitgn.ac.in'> pdc.secretary@iitgn.ac.in</a></p> */}
 
             </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactForm from '../components/ContactForm'
+import ResumeReview from '../components/ResumeReview'
 import Head from 'next/head'
 
 const Contact = () => {
@@ -29,19 +30,30 @@ const Contact = () => {
               <p><strong>Email: </strong><a href='mailto:pdc.secretary@iitgn.ac.in'> pdc.secretary@iitgn.ac.in</a></p>
 
             </div>
-
-
-
           </div>
           <div className="col-md-6 single-item">
 
             <ContactForm />
           </div>
-
-
         </div>
 
+        <div className="section-heading">
+          <h1>Resume Review Section</h1>
+        </div>
 
+        <div className="row">
+          <div className="col-md-6 single-item">
+            <div className="contact-content">
+              <p>Get insights and guidance for building successful resume's through our team.</p>
+              {/* <p><strong>Email: </strong><a href='mailto:pdc.secretary@iitgn.ac.in'> pdc.secretary@iitgn.ac.in</a></p> */}
+
+            </div>
+          </div>
+          <div className="col-md-6 single-item">
+
+            <ResumeReview />
+          </div>
+        </div>
       </div>
 
 

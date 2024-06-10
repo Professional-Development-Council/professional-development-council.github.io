@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import '../styles/index.css'
 import '../styles/responsive.css'
+import '../styles/events.css'; // Import the global CSS file here
+
 
 // const CLIENT_ID = process.env.NEXT_PUBLIC_PG_CLIENT_ID;
 

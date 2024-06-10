@@ -1,5 +1,12 @@
 export const EventsData = [
     {
+        "EventName": "Coding Nights",
+        "date": "26-05-2024",
+        "location": "Codeforces, Codechef, Leetcode",
+        "description": "Online Coding Contest, Prizes worth 11k",
+        "image": "/assets/images/Coding_Nights-01.png"
+    },
+    {
         "EventName": "Resume Building Workshop",
         "date": "2023-05-10",
         "location": "Auditorium A101",

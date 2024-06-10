@@ -147,6 +147,11 @@ const Navbar = () => {
                 </Link>
               )}
 
+              {(
+                <Link href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0" className="drop-nav-links" onClick={handleClick}>
+                  External Opportunities
+                </Link>
+              )}
             </div>
           </div>
 

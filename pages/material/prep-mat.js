@@ -1,36 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Head from 'next/head';
 
 const PrepMat = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [yearFilter, setYearFilter] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage] = useState(20);
   const scriptURL= "https://script.google.com/macros/s/AKfycbwVZ7kHNm81gFN6M1XBu6oteGUxJZNpYj8_T0Z0R9E7vUKV6NOA7y6T4a_8JYDhcSeq/exec"
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(scriptURL); // Replace with your Google Apps Script URL
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await fetch(scriptURL);
+      const result = await response.json();
+      setData(result);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   }, []);
 
-  const uniqueYears = [...new Set(data.map(article => article.Year))];
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-  const filteredArticles = data.filter(article => {
-    return (yearFilter === 'All' || article.Year === yearFilter);
-  });
+  const uniqueYears = useMemo(() => {
+    return [...new Set(data.map(article => article.Year))];
+  }, [data]);
+
+  const filteredArticles = useMemo(() => {
+    return data.filter(article => yearFilter === 'All' || article.Year === yearFilter);
+  }, [data, yearFilter]);
 
   const indexOfLastData = currentPage * dataPerPage;
   const indexOfFirstData = indexOfLastData - dataPerPage;
-  const currentData = filteredArticles.slice(indexOfFirstData, indexOfLastData);
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const currentData = useMemo(() => {
+    return filteredArticles.slice(indexOfFirstData, indexOfLastData);
+  }, [filteredArticles, indexOfFirstData, indexOfLastData]);
+
+  const paginate = useCallback((pageNumber) => {
+    setCurrentPage(pageNumber);
+  }, []);
 
   return (
     <div className='main-container'>
@@ -57,34 +66,40 @@ const PrepMat = () => {
           </select>
         </div>
 
-        <div className='row'>
-          {currentData.map((item, index) => (
-            <div className="col-md-3" key={index}>
-              <div className="card-item">
-                <h4>{item.CompanyName}</h4>
-                <p>Year: {item.Year}</p>
-                {item.MaterialForPlacement && <a href={item.MaterialForPlacement} target='_blank' rel="noreferrer"><button className='card-tags'>Material For Placement</button></a>}
-                {item.MaterialForInternship && <a href={item.MaterialForInternship} target='_blank' rel="noreferrer"><button className='card-tags'>Material For Internship</button></a>}
-              </div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            <div className='row'>
+              {currentData.map((item, index) => (
+                <div className="col-md-3" key={index}>
+                  <div className="card-item">
+                    <h4>{item.CompanyName}</h4>
+                    <p>Year: {item.Year}</p>
+                    {item.MaterialForPlacement && <a href={item.MaterialForPlacement} target='_blank' rel="noreferrer"><button className='card-tags'>Material For Placement</button></a>}
+                    {item.MaterialForInternship && <a href={item.MaterialForInternship} target='_blank' rel="noreferrer"><button className='card-tags'>Material For Internship</button></a>}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        <div className="pagination-section">
-          {[...Array(Math.ceil(filteredArticles.length / dataPerPage))].map((_, i) => (
-            <div key={i} className='pagination-btn-container'>
-              <button
-                className='pagination-btn'
-                onClick={() => {
-                  paginate(i + 1);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                {i + 1}
-              </button>
+            <div className="pagination-section">
+              {[...Array(Math.ceil(filteredArticles.length / dataPerPage))].map((_, i) => (
+                <div key={i} className='pagination-btn-container'>
+                  <button
+                    className='pagination-btn'
+                    onClick={() => {
+                      paginate(i + 1);
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    {i + 1}
+                  </button>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
     </div>
   );

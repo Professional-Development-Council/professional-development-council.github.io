@@ -1,15 +1,26 @@
-import React, { useEffect } from "react";
-import { EventsData } from '../../data/EventsData';
+import React, { useEffect, useState } from "react";
+import Papa from "papaparse";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-// import styles from '../../styles/events.css'; // Import the CSS file
 
 const Events = () => {
+  const [eventsData, setEventsData] = useState([]);
+
   useEffect(() => {
     AOS.init();
+
+    // Fetch and parse the CSV data
+    Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vRiRIDiOZc5K7mSTzbNLktdJ49kW1GJfaEyvlsOLiBCFgsvoZ-1U-ud4XDaJhPnIVd3DoeA16IB1E_Y/pub?gid=0&single=true&output=csv', {
+      header: true,
+      download: true,
+      dynamicTyping: true,
+      complete: (results) => { 
+        setEventsData(results.data);
+      }
+    });
   }, []);
 
   return (
@@ -26,21 +37,23 @@ const Events = () => {
 
       <div className="page-container">
         <div className="timeline-container">
-          {EventsData.map((item, index) => (
-            <div className="timeline-item" key={index} data-aos="fade-up">
-              <div className="timeline-content">
-                <h3>{item.EventName}</h3>
-                <p>{item.date}</p>
-                <p>{item.description}</p>
-                <Link href={`/events/${item.EventName}`} passHref>
-                  <button>Read more</button>
-                </Link>
+          {eventsData.length ?
+            eventsData.map((item, index) => (
+              <div className="timeline-item" key={index} data-aos="fade-up">
+                <div className="timeline-content">
+                  <h3>{item.EventName}</h3>
+                  <p>{item.date}</p>
+                  <p>{item.description}</p>
+                  <Link href={`/events/${encodeURIComponent(item.EventName)}`} passHref>
+                    <button>Read more</button>
+                  </Link>
+                </div>
+                {/* <div className="timeline-image">
+                  <Image src={item.image} alt='item' className="Image-general" width={100} height={100}/>
+                </div> */}
               </div>
-              <div className="timeline-image">
-                <Image src={item.image} alt='item' className="Image-general" width={100} height={100}/>
-              </div>
-            </div>
-          ))}
+            ))
+          : <p className='Loading-tag'>Loading...</p>}
         </div>
       </div>
     </div>

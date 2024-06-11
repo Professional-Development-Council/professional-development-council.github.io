@@ -29,7 +29,7 @@ const Team = () => {
 
 
                 <section id="team" className="team-area">
-                    <div className="row team-items" style={{justifyContent: "center"}}>
+                    <div className="row team-items" style={{ justifyContent: "center" }}>
 
                         {TeamData.map((item, index) => {
                             return (
@@ -48,17 +48,24 @@ const Team = () => {
                                         <div className="info">
                                             <span className="message">
                                                 {item.linkedin && (
-                                                    <a href={item.linkedin} target="_blank"><i className="fab fa-linkedin" style={{fontSize: "25px"}}></i></a>
+                                                    <a href={item.linkedin} target="_blank"><i className="fab fa-linkedin" style={{ fontSize: "25px" }}></i></a>
                                                 )}
                                                 {item.email && (
-                                                    <a href={`mailto:${item.email}`} target="_blank"><i className="fas fa-envelope-open" style={{fontWeight: "500"}}></i></a>
+                                                    <a href={`mailto:${item.email}`} target="_blank"><i className="fas fa-envelope-open" style={{ fontWeight: "500" }}></i></a>
                                                 )}
-                                                {item.github && (
-                                                    <a href={item.github} target="_blank"><i className="fab fa-github" style={{fontSize: "25px"}}></i></a>
-                                                )}
+                                                {item.position === 'Webmaster' && item.github ? (
+                                                        <a href={item.github} target="_blank" rel="noopener noreferrer">
+                                                            <i className="fab fa-github" style={{ fontSize: "25px" }}></i>
+                                                        </a>
+                                                ) : item.profile ? (
+                                                    <a href={item.profile} target="_blank" rel="noopener noreferrer">
+                                                        <i className="fas fa-user" style={{ fontSize: "25px" }}></i>
+                                                    </a>
+                                                ) : null}
                                             </span>
                                             <h4>{item.name}</h4>
-                                            <span>{item.position}</span>
+                                            <span style={{fontSize: "1.05rem"}}>{item.position}</span>
+                                            <p style={{fontSize: "0.85rem", fontWeight: "600", opacity: "0.6"}}>Contact no: +91 {item.contact}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@ export const PastTeamData = [
       "id": 1,
       "name": "Dhairya Shah",
       "year": "2023-2024",
-      // "email":"dhairya.shah@iitgn.ac.in",
+      "email":"dhairya.shah@iitgn.ac.in",
       "image": Team0,
       "linkedin":"https://www.linkedin.com/in/dhairyashah0819" 
     },
@@ -19,7 +19,7 @@ export const PastTeamData = [
       "id": 2,
       "name": "Dhvani Shah",
       "year": "2022-2023",
-      // "email":"dhvani.ms@iitgn.ac.in",
+      "email":"dhvani.ms@iitgn.ac.in",
       "image": Team1,
       "linkedin":"https://www.linkedin.com/in/dhvanimshah/" 
     },
@@ -51,8 +51,5 @@ export const PastTeamData = [
       "image": Team5,
       "linkedin":"https://www.linkedin.com/in/hardeephardeep/" 
     },
-    
-    
-
   ]
     

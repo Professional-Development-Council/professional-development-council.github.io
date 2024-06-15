@@ -17,7 +17,7 @@ const EventsDetails = () => {
     }, [EventName]);
 
     return (
-        <div className='main-container'>
+        <div className='main-container' >
             {Event && (
                 <div>
                     <Head>
@@ -41,34 +41,23 @@ const EventsDetails = () => {
                                     <div className="para-contaent">
                                         <p>Event Date: {Event.date}</p>
                                         <p>{Event.description}</p>
-                                        <p>{Event.location}</p>
-
+                                        <p>{Event.location}</p> 
+                                        {Event.registration && (
+                                            <p><a href={Event.registration} target="_blank" style={{color: "blue"}}> Registration Link</a> </p>
+                                        )}
                                     </div>
-
-
-
                                 </div>
                                 <div className="col-md-6">
-                                    <Image src={Event.image} alt="event" className='Image-general' width={100} height={100}/>
-
-
+                                    {Event.image && (
+                                        <Image src={Event.image} alt="event" className='Image-general' width={1000} height={1000}/>
+                                    )}
                                 </div>
                             </div>
-
                         </div>
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             )}
         </div>
-
     )
 }
 

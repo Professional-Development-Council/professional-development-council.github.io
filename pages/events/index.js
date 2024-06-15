@@ -8,6 +8,8 @@ import Image from "next/image";
 
 const Events = () => {
   const [eventsData, setEventsData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
 
   useEffect(() => {
     AOS.init();
@@ -23,6 +25,17 @@ const Events = () => {
     });
   }, []);
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = eventsData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(eventsData.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className='main-container'>
       <Head>
@@ -37,8 +50,8 @@ const Events = () => {
 
       <div className="page-container">
         <div className="timeline-container">
-          {eventsData.length ?
-            eventsData.map((item, index) => (
+          {currentItems.length ?
+            currentItems.map((item, index) => (
               <div className="timeline-item" key={index} data-aos="fade-up">
                 <div className="timeline-content">
                   <h3>{item.EventName}</h3>
@@ -54,6 +67,19 @@ const Events = () => {
               </div>
             ))
           : <p className='Loading-tag'>Loading...</p>}
+        </div>
+
+        <div className="pagination-section">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <div key={index} className='pagination-btn-container'>
+              <button
+                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                onClick={() => handlePageChange(index + 1)}
+              >
+                {index + 1}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

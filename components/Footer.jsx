@@ -62,9 +62,9 @@ const Footer = () => {
                     <li><a href="https://www.linkedin.com/company/professional-development-council-iit-gandhinagar/" target="_blank" rel="noreferrer">
                       <i className="fab fa-linkedin" style={{fontSize: '22px'}}></i></a>
                     </li>
-                    <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+                    {/* <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                       <i className="fab fa-youtube" style={{fontSize: '22px'}}></i></a>
-                    </li>
+                    </li> */}
                     <li><a href="mailto:pdc.secretary@iitgn.ac.in" target="_blank" rel="noreferrer">
                       <i className="fas fa-envelope" style={{fontSize: '22px'}}></i></a>
                     </li>

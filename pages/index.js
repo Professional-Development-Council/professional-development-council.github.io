@@ -69,9 +69,7 @@ export default function Home() {
           </div>
 
           <ImageCarousel />
-          <div className="announcements-btn">
-            <Link href="/events"><button className="read-button">Read More</button></Link>
-          </div>
+          
         </div>
       </div>
 

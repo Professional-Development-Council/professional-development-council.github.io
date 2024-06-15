@@ -1,53 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import Papa from "papaparse";
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { EventsData } from '../data/EventsData'; // Assuming EventsData is imported correctly
 
 function ImageCarousel() {
-    const [data, setData] = useState([]);
+    const initialDisplayCount = 3; // Initial number of announcements to display
+    const [displayCount, setDisplayCount] = useState(initialDisplayCount);
+    const announcements = EventsData.filter(event => event.announce === "true");
 
-    useEffect(() => {
-        Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vRiRIDiOZc5K7mSTzbNLktdJ49kW1GJfaEyvlsOLiBCFgsvoZ-1U-ud4XDaJhPnIVd3DoeA16IB1E_Y/pub?gid=0&single=true&output=csv', {
-            header: true,
-            download: true,
-            dynamicTyping: true,
-            complete: (results) => {
-                setData(results.data);
-            }
-        });
-    }, []);
+    const loadMoreAnnouncements = () => {
+        // Increase displayCount by 3 each time Load More is clicked
+        setDisplayCount(displayCount + 3);
+    };
 
     return (
         <div className="image-carousel-container">
-            {data.length ?
-                <div className="recent-update-section">
-                    <div className="row">
-                        {data.slice(0, 3).map((item, index) => {
-                            return (
-                                <div className='col-md-4' key={index}>
-                                    <div className="card-item">
-                                        <div className="card-item-img">
-                                            <a href={item.ArticleLink} target="_blank" rel="noreferrer">
-                                                <Image className='Image-general' src={item.image} alt={item.EventName} width={100} height={100}/>
-                                            </a>
-                                        </div>
-                                        <div className="card-item-content">
-                                            <a href={`/events/${encodeURIComponent(item.EventName)}`} rel="noreferrer">
-                                                <p>{item.EventName}</p>
-                                            </a>
-                                            {/* <p>{item.date}</p> */}
-                                            {/* <p>{item.location}</p> */}
-                                            {/* <p>{item.description}</p> */}
-                                            {/* <Link href={`/events/${encodeURIComponent(item.EventName)}`} passHref> */}
-                                                {/* <button>Read More</button> */}
-                                            {/* </Link> */}
-                                        </div>
+            <div className="recent-update-section">
+                <div className="row">
+                    {announcements.slice(0, displayCount).map((item, index) => {
+                        return (
+                            <div className='col-md-4' key={index}>
+                                <div className="card-item">
+                                    <div className="card-item-img">
+                                        <a href={item.ArticleLink} target="_blank" rel="noreferrer">
+                                            {/* Assuming you have an image field in EventsData */}
+                                            <Image className='Image-general' src={item.image || "/assets/images/default.jpg"} alt={item.EventName} width={1000} height={1000} />
+                                        </a>
+                                    </div>
+                                    <div className="card-item-content">
+                                        <a href={`/events/${encodeURIComponent(item.EventName)}`} rel="noreferrer">
+                                            <p>{item.EventName}</p>
+                                        </a>
+                                        {/* Additional fields if needed */}
+                                        {/* <p>{item.date}</p> */}
+                                        {/* <p>{item.location}</p> */}
+                                        {/* <p>{item.description}</p> */}
+                                        {/* Example button or link */}
+                                        {/* <Link href={`/events/${encodeURIComponent(item.EventName)}`} passHref> */}
+                                            {/* <button>Read More</button> */}
+                                        {/* </Link> */}
                                     </div>
                                 </div>
-                            )
-                        })}
-                    </div>
+                            </div>
+                        )
+                    })}
                 </div>
-                : <p className='Loading-tag'>Loading...</p>}
+            </div>
+
+            {/* Load More Button */}
+            {displayCount < announcements.length &&
+                <div className="announcements-btn">
+                    <button className="read-button" onClick={loadMoreAnnouncements}>Load More</button>
+                </div>
+            }
+            {/* <div className="announcements-btn">
+            <Link href="/events"><button className="read-button">Read More</button></Link>
+          </div> */}
+
+            {/* No more announcements message */}
+            {/* {displayCount >= announcements.length &&
+                <p className='read-button'>No more announcements to load.</p>
+            } */}
         </div>
     );
 }

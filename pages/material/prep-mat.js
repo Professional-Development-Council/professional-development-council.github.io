@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useContext } from 'react';
 import Head from 'next/head';
+import ProfileContext from '../../components/ProfileContext';
 
 const PrepMat = () => {
   const [data, setData] = useState([]);
@@ -7,7 +8,11 @@ const PrepMat = () => {
   const [yearFilter, setYearFilter] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage] = useState(20);
-  const scriptURL= "https://script.google.com/macros/s/AKfycbwVZ7kHNm81gFN6M1XBu6oteGUxJZNpYj8_T0Z0R9E7vUKV6NOA7y6T4a_8JYDhcSeq/exec"
+  const { profile } = useContext(ProfileContext);
+  const [completedItems, setCompletedItems] = useState([]);
+
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwVZ7kHNm81gFN6M1XBu6oteGUxJZNpYj8_T0Z0R9E7vUKV6NOA7y6T4a_8JYDhcSeq/exec";
+
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(scriptURL);
@@ -19,9 +24,74 @@ const PrepMat = () => {
     }
   }, []);
 
+  const fetchUserData = useCallback(async () => {
+    if (profile) {
+      try {
+        const response = await fetch(`https://backend-test-ashy.vercel.app/getData?email=${profile.email}`, {
+          headers: {
+            Authorization: `Bearer ${profile.access_token}`,
+          },
+        });
+
+        if (response.status === 404) {
+          await fetch('https://backend-test-ashy.vercel.app/updateData', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${profile.access_token}`,
+            },
+            body: JSON.stringify({ email: profile.email, pdfNumber: 0 }),
+          });
+        } else {
+          const userData = await response.json();
+          console.log('User Data:', userData);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    }
+  }, [profile]);
+
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+    fetchUserData();
+  }, [fetchData, fetchUserData]);
+
+  useEffect(() => {
+    if (profile?.email) {
+      const storedCompletedItems = localStorage.getItem(`${profile.email}-completedItems`);
+      if (storedCompletedItems) {
+        setCompletedItems(JSON.parse(storedCompletedItems));
+      }
+    }
+  }, [profile]);
+
+  const postCompletedItem = async (email, itemId) => {
+    try {
+      await fetch('https://backend-test-ashy.vercel.app/updateData', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${profile.access_token}`,
+        },
+        body: JSON.stringify({ email, pdfNumber: itemId }),
+      });
+    } catch (error) {
+      console.error('Error posting completed item:', error);
+    }
+  };
+
+  const handleCheckboxChange = (itemId) => {
+    const updatedCompletedItems = completedItems.includes(itemId)
+      ? completedItems.filter(item => item !== itemId)
+      : [...completedItems, itemId];
+    setCompletedItems(updatedCompletedItems);
+
+    if (profile?.email) {
+      localStorage.setItem(`${profile.email}-completedItems`, JSON.stringify(updatedCompletedItems));
+      postCompletedItem(profile.email, itemId);
+    }
+  };
 
   const uniqueYears = useMemo(() => {
     return [...new Set(data.map(article => article.Year))];
@@ -65,19 +135,29 @@ const PrepMat = () => {
             ))}
           </select>
         </div>
-
+        <div>
+          <h1>Completed</h1>
+        </div>
         {loading ? (
           <p>Loading...</p>
         ) : (
           <>
             <div className='row'>
               {currentData.map((item, index) => (
-                <div className="col-md-3" key={index}>
+                <div className="col-md-3" key={item.Id}>
                   <div className="card-item">
                     <h4>{item.CompanyName}</h4>
                     <p>Year: {item.Year}</p>
                     {item.MaterialForPlacement && <a href={item.MaterialForPlacement} target='_blank' rel="noreferrer"><button className='card-tags'>Material For Placement</button></a>}
                     {item.MaterialForInternship && <a href={item.MaterialForInternship} target='_blank' rel="noreferrer"><button className='card-tags'>Material For Internship</button></a>}
+                    <div className="completed-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={completedItems.includes(item.Id)}
+                        onChange={() => handleCheckboxChange(item.Id)}
+                      />
+                      <label>Completed</label>
+                    </div>
                   </div>
                 </div>
               ))}

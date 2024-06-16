@@ -1,36 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import Logo from "../public/assets/images/PDC IITGN.jpg"
 import Link from 'next/link';
 import Image from 'next/image';
-
+import ProfileContext from './ProfileContext'; // Import the ProfileContext
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [user, setUser] = useState([]);
-  const [profile, setProfile] = useState();
-
+  const { profile, login, logout } = useContext(ProfileContext); // Use the context
+  const [user, setUser] = useState(null);
 
   const handleClick = () => {
     setClick(!click);
   };
 
-  useEffect(() => {
-    const storedProfile = localStorage.getItem('profile');
-    if (storedProfile) {
-      setProfile(JSON.parse(storedProfile));
-    }
-  }, []);
-
-
-
-  const login = useGoogleLogin({
+  const googleLogin = useGoogleLogin({
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log('Login Failed:', error)
   });
-
-
 
   useEffect(() => {
     if (user) {
@@ -44,8 +32,7 @@ const Navbar = () => {
         .then((res) => {
           const email = res.data.email;
           if (email.endsWith('@iitgn.ac.in')) {
-            setProfile(res.data);
-            localStorage.setItem('profile', JSON.stringify(res.data));
+            login(res.data); // Use the login function from context
           } else {
             alert('Only users with "@iitgn.ac.in" email domain are allowed');
             googleLogout();
@@ -53,137 +40,104 @@ const Navbar = () => {
         })
         .catch((err) => console.log(err));
     }
-  }, [user]);
-
+  }, [user, login]);
 
   const logOut = () => {
     googleLogout();
-    setProfile(null);
-    localStorage.removeItem('profile');
+    logout(); // Use the logout function from context
   };
-
 
   return (
     <div className='nav_container'>
       <div className="main_navbar">
-          <div className="nav-logo">
-            <Link href="/" className="logo-image">
-              <Image src={Logo} alt="logo" className='Image-general' />
-            </Link>
-          </div>
-          <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-          </div>
-
-
-
+        <div className="nav-logo">
+          <Link href="/" className="logo-image">
+            <Image src={Logo} alt="logo" className='Image-general' />
+          </Link>
+        </div>
+        <div className="nav-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
         <div className={click ? "nav-menu nav-menu-active" : "nav-menu"}>
           <div className="nav-item">
             <Link href="/" className="nav-links" onClick={handleClick}  >
               Home
             </Link>
           </div>
-
           <div className="nav-item">
             <Link href="/about" className="nav-links" onClick={handleClick} >
               About
             </Link>
           </div>
-
           <div className="nav-item">
             <button className="nav-dropbtn">
               Team <i className="fa fa-angle-down" aria-hidden="true"></i>
             </button>
-
             <div className="dropdown-content">
               <Link href="/team" className="drop-nav-links" onClick={handleClick}>
                 Current Team
               </Link>
-
               <Link href="/team/past-team" className="drop-nav-links" onClick={handleClick}>
                 Past Secretaries
               </Link>
-
             </div>
           </div>
-
           <div className="nav-item">
-            <Link
-              href="/events" className="nav-links" onClick={handleClick} >
+            <Link href="/events" className="nav-links" onClick={handleClick} >
               Events
             </Link>
           </div>
-
-          {/* <div className="nav-item">
-            <Link
-              href="/blogs" className="nav-links" onClick={handleClick} >
-              Blogs
-            </Link>
-          </div> */}
-
           <div className="nav-item">
             <button className="nav-dropbtn">
               Material <i className="fa fa-angle-down" aria-hidden="true"></i>
             </button>
-
             <div className="dropdown-content">
               {profile ? (
                 <Link href="/material/prep-mat" className="drop-nav-links" onClick={handleClick} >
                   PrepMat
                 </Link>
               ) : (
-                <Link href="/" className="drop-nav-links" onClick={() => login()} >
+                <Link href="/" className="drop-nav-links" onClick={() => googleLogin()} >
                   PrepMat
                 </Link>
               )}
-
               {profile ? (
                 <Link href="/material/placement-talks" className="drop-nav-links" onClick={handleClick}>
                   Placement Talks Videos
                 </Link>
               ) : (
-                <Link href="/" className="drop-nav-links" onClick={() => login()}>
+                <Link href="/" className="drop-nav-links" onClick={() => googleLogin()}>
                   Placement Talks Videos
                 </Link>
               )}
-
-              {(
-                <Link href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0" className="drop-nav-links" onClick={handleClick}>
-                  External Opportunities
-                </Link>
-              )}
+              <Link href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0" className="drop-nav-links" onClick={handleClick}>
+                External Opportunities
+              </Link>
             </div>
           </div>
-
           <div className="nav-item">
             <button className="nav-dropbtn">
               Divisions <i className="fa fa-angle-down" aria-hidden="true"></i>
             </button>
-
             <div className="dropdown-content">
               <Link href="/annuity" className="drop-nav-links">
                 Annuity Club
               </Link>
-
               <Link href="/tedxiitgn" className="drop-nav-links">
                 TEDxIITGandhinagar
               </Link>
-
             </div>
           </div>
-
           <div className="nav-item">
             <Link href="/contact" className="nav-links" onClick={handleClick} >
               Contact Us
             </Link>
           </div>
-
           <div className="nav-item">
             <Link href="/resume_review" className="nav-links" onClick={handleClick} >
               Resume Review
             </Link>
           </div>
-
           <div className="nav-item">
             {profile ? (
               <div className='profile-img'>
@@ -196,15 +150,13 @@ const Navbar = () => {
                 <button className="phone_logout_btn" onClick={logOut} >Logout</button>
               </div>
             ) : (
-              <button className="login-btn" onClick={() => login()}>Login In </button>
+              <button className="login-btn" onClick={() => googleLogin()}>Login In</button>
             )}
           </div>
-
         </div>
       </div>
     </div>
-
   )
 }
 
-export default Navbar
+export default Navbar;

@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="row">
               <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                 <div className="copyright-text">
-                  <p>Copyright &copy; 2023, All Right Reserved <Link href="/" >Professional Development Council</Link></p>
+                  <p>Copyright &copy; 2024, All Right Reserved <Link href="/" >Professional Development Council</Link></p>
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">

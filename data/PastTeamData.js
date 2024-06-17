@@ -19,7 +19,7 @@ export const PastTeamData = [
       "id": 2,
       "name": "Dhvani Shah",
       "year": "2022-2023",
-      "email":"dhvani.ms@iitgn.ac.in",
+      "email":"dhvani.ms@alumni.iitgn.ac.in",
       "image": Team1,
       "linkedin":"https://www.linkedin.com/in/dhvanimshah/" 
     },

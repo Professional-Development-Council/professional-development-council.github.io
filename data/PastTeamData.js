@@ -27,6 +27,7 @@ export const PastTeamData = [
       "id": 3,
       "name": "Maitreya Thakur",
       "year": "2021-2022",
+      "email":"maitreya.thakur@alumni.iitgn.ac.in",
       "image": Team2,
       "linkedin":"https://www.linkedin.com/in/maitreya-thakur-25b94916b/" 
     },
@@ -34,6 +35,7 @@ export const PastTeamData = [
       "id": 4,
       "name": "Mohit Mina",
       "year": "2020-2021",
+      "email":"mohit.mina@alumni.iitgn.ac.in",
       "image": Team3,
       "linkedin":"https://www.linkedin.com/in/mohit-mina-698402165/" 
     },
@@ -41,6 +43,7 @@ export const PastTeamData = [
       "id": 5,
       "name": "Smeet Vora",
       "year": "2019-2020",
+      "email":"smeet.vora@alumni.iitgn.ac.in",
       "image": Team4,
       "linkedin":"https://www.linkedin.com/in/smeetvora/" 
     },
@@ -48,6 +51,7 @@ export const PastTeamData = [
       "id": 6,
       "name": "Hardeep",
       "year": "2018-2019",
+      "email":"hardeep.15110053@btech2015.iitgn.ac.in",
       "image": Team5,
       "linkedin":"https://www.linkedin.com/in/hardeephardeep/" 
     },

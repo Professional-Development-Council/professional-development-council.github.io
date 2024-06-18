@@ -71,7 +71,8 @@ const Clubs = () => {
                             <a href="https://github.com/Samyak312" target="_blank"><i className="fab fa-github" style={{ fontSize: "25px" }}></i></a>
                         </span>
                         <h4>Samyak Gosalia</h4>
-                        <span>Annuity Secretary</span>
+                        <span style={{fontSize: "1.05rem"}}>Annuity Secretary</span>
+                        <p style={{fontSize: "0.85rem", fontWeight: "600", opacity: "0.6"}}>Contact no: +91 83202 76538</p>
                       </div>
                     </div>
                   </div>
@@ -91,7 +92,8 @@ const Clubs = () => {
                             <a href={`mailto:farhan.obaid@iitgn.ac.in`} target="_blank"><i className="fas fa-envelope-open" style={{ fontWeight: "500" }}></i></a>
                         </span>
                         <h4>Farhan Obaid</h4>
-                        <span>Annuity Co-ordinator</span>
+                        <span style={{fontSize: "1.05rem"}}>Annuity Co-ordinator</span>
+                        <p style={{fontSize: "0.85rem", fontWeight: "600", opacity: "0.6"}}>Contact no: +91 76673 36359</p>
                       </div>
                     </div>
                   </div>
@@ -106,9 +108,9 @@ const Clubs = () => {
               <li><a href="https://www.instagram.com/annuity_iitgn?igsh=dWx1N2E1b3l4aGVn" target="_blank" rel="noreferrer">
                 <i className="fab fa-instagram" style={{ fontSize: '22px' }}></i></a>
               </li>
-              {/* <li><a href="https://www.linkedin.com/company/professional-development-council-iit-gandhinagar/" target="_blank" rel="noreferrer">
+              <li><a href="https://www.linkedin.com/company/annuity-finance-club-iit-gandhinagar/" target="_blank" rel="noreferrer">
                 <i className="fab fa-linkedin" style={{ fontSize: '22px' }}></i></a>
-              </li> */}
+              </li>
               <li><a href="mailto:annuity@iitgn.ac.in" target="_blank" rel="noreferrer">
                 <i className="fas fa-envelope" style={{ fontSize: '22px' }}></i></a>
               </li>

@@ -38,7 +38,12 @@ const Clubs = () => {
               </div>
               <div className="para-contaent">
                 <p>In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
-</p>
+                </p>
+                <div>
+                  <a href="https://www.tedxiitgandhinagar.in/" target="_blank" rel="noreferrer" className="tedxiitgn-website-btn">
+                    Visit Our <span style={{color: "red", fontWeight: "600"}}>TEDx</span>IITGandhinagar Website
+                  </a>
+                </div>
               </div>
 
 
@@ -49,17 +54,28 @@ const Clubs = () => {
           </div>
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
+        <div className="footer-social-icon">
+          <div className="footer-widget-heading">
+            <h3 style={{ color: 'black' }}>Follow us</h3>
+          </div>
+          <ul className="social_icon">
+            <li><a href="https://www.facebook.com/TEDxIITGn" target="_blank" rel="noreferrer">
+              <i className="fab fa-facebook" style={{ fontSize: '22px' }}></i></a>
+            </li>
+            <li><a href="https://www.instagram.com/tedx.iitgandhinagar/" target="_blank" rel="noreferrer">
+              <i className="fab fa-instagram" style={{ fontSize: '22px' }}></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/company/tedxiitgandhinagar/" target="_blank" rel="noreferrer">
+              <i className="fab fa-linkedin" style={{ fontSize: '22px' }}></i></a>
+            </li>
+            <li><a href="https://www.youtube.com/@tedxiitgandhinagar" target="_blank" rel="noreferrer">
+              <i className="fab fa-youtube" style={{ fontSize: '22px' }}></i></a>
+            </li>
+            <li><a href="mailto:tedxiitgandhinagar@iitgn.ac.in" target="_blank" rel="noreferrer">
+              <i className="fas fa-envelope" style={{ fontSize: '22px' }}></i></a>
+            </li>
+          </ul>
+        </div>
 
       </div>
     </div>

@@ -53,18 +53,21 @@ const Footer = () => {
                     <h3>Follow us</h3>
                   </div>
                   <ul className="social_icon">
+                    <li><a href="https://www.facebook.com/pdcIITGN/" target="_blank" rel="noreferrer">
+                      <i className="fab fa-facebook" style={{fontSize: '22px'}}></i></a>
+                    </li>
                     <li><a href="https://www.instagram.com/pdc_iitgn?igsh=bmVvcTkzbjdtazZn" target="_blank" rel="noreferrer">
                       <i className="fab fa-instagram" style={{fontSize: '22px'}}></i></a>
                     </li>
                     <li><a href="https://www.linkedin.com/company/professional-development-council-iit-gandhinagar/" target="_blank" rel="noreferrer">
                       <i className="fab fa-linkedin" style={{fontSize: '22px'}}></i></a>
                     </li>
-                    <li><a href="mailto:pdc.secretary@iitgn.ac.in" target="_blank" rel="noreferrer">
-                      <i className="fas fa-envelope" style={{fontSize: '22px'}}></i></a>
-                    </li>
                     {/* <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                       <i className="fab fa-youtube" style={{fontSize: '22px'}}></i></a>
                     </li> */}
+                    <li><a href="mailto:pdc.secretary@iitgn.ac.in" target="_blank" rel="noreferrer">
+                      <i className="fas fa-envelope" style={{fontSize: '22px'}}></i></a>
+                    </li>
                   </ul>
                 </div>
 

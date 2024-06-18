@@ -18,7 +18,7 @@ export const EventsData =[
         "description": "The Student Academic Council, in collaboration with the Professional Development Council, is organizing a webinar to guide the GRE and TOEFL aspirants. This session would benefit students opting to appear for the exam this year or the upcoming year.",
         "registration": "",
         "year": "2024-25",
-        "image": "https://drive.google.com/uc?export=view&id=1wV2z8oJYQkkgWXWCMZzxLWr8UNhRVTfq",
+        "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihbtzTlLYChKbKwjrnEmvW8-eGREVVHq40E6S8KSUOsAIkfUNB8LUVrnB3HflFzPLLFuaoSBxkz_mbjz-4SJu6JboLKgKJdUy3s=s1600-rw-v1",
         "announce": "true"
     },
     {
@@ -28,7 +28,7 @@ export const EventsData =[
         "description": "We are pleased to present another important webinar on guidance for the CAT and GMAT exams, essential for those aspiring to enter B-schools. As many of you know, these are two of the most sought-after exams for gaining admission to top B-schools. The CAT is a standardized test required for most top B-Schools in India, including the IIMs. The GMAT is an internationally accepted test necessary for admission to top B-schools worldwide and some in India, such as the Indian School of Business (ISB).",
         "registration": "",
         "year": "2024-25",
-        "image": "/assets/images/stock2.jpg",
+        "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBOt3LYqhO1rPOeURKL6ODwZsbQ4cS3Rubvk3dcJds9e_sW2rmICuCkR9X9Y_r0vU1PKyUspEbyD6gMc8L5rMN_bnauXfkSw=s1600-rw-v1",
         "announce": "true"
     },
     {

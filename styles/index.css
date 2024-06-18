@@ -1089,6 +1089,11 @@ a {
   color: #fff;
 }
 
+.social_icon li:nth-child(5) a {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+  color: #fff;
+}
+
 .social_icon li:nth-child(1):hover a {
   background: #fff;
   color: #4267b2;
@@ -1109,6 +1114,19 @@ a {
   color: #ff0000;
 }
 
+.social_icon li:nth-child(5):hover a {
+  background: #fff;
+  color: #11998e;
+}
+
+.tedxiitgn-website-btn{
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: 0.3s all ease-in-out;
+}
 
 
 

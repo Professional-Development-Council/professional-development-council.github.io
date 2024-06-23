@@ -27,25 +27,14 @@ const PrepMat = () => {
   const fetchUserData = useCallback(async () => {
     if (profile) {
       try {
-        const response = await fetch(`https://backend-test-ashy.vercel.app/getData?email=${profile.email}`, {
+        const response = await fetch(` https://ap-south-1.aws.data.mongodb-api.com/app/application-0-gqhlryg/endpoint/getData?email=${profile.email}`, {
           headers: {
             Authorization: `Bearer ${profile.access_token}`,
           },
         });
 
-        if (response.status === 404) {
-          await fetch('https://backend-test-ashy.vercel.app/updateData', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${profile.access_token}`,
-            },
-            body: JSON.stringify({ email: profile.email, pdfNumber: 0 }),
-          });
-        } else {
-          const userData = await response.json();
-          console.log('User Data:', userData);
-        }
+        const userData = await response.json();
+        setCompletedItems(userData.completedPDFList || []);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -66,15 +55,15 @@ const PrepMat = () => {
     }
   }, [profile]);
 
-  const postCompletedItem = async (email, itemId) => {
+  const postCompletedItem = async (email, completedPDFList) => {
     try {
-      await fetch('https://backend-test-ashy.vercel.app/updateData', {
+      await fetch('https://ap-south-1.aws.data.mongodb-api.com/app/application-0-gqhlryg/endpoint/updateData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${profile.access_token}`,
         },
-        body: JSON.stringify({ email, pdfNumber: itemId }),
+        body: JSON.stringify({ email, completedPDFCount: completedPDFList.length, completedPDFList }),
       });
     } catch (error) {
       console.error('Error posting completed item:', error);
@@ -82,15 +71,16 @@ const PrepMat = () => {
   };
 
   const handleCheckboxChange = (itemId) => {
-    const updatedCompletedItems = completedItems.includes(itemId)
-      ? completedItems.filter(item => item !== itemId)
-      : [...completedItems, itemId];
-    setCompletedItems(updatedCompletedItems);
-
-    if (profile?.email) {
-      localStorage.setItem(`${profile.email}-completedItems`, JSON.stringify(updatedCompletedItems));
-      postCompletedItem(profile.email, itemId);
-    }
+    setCompletedItems(currentItems => {
+      const updatedCompletedItems = currentItems.includes(itemId)
+        ? currentItems.filter(item => item !== itemId)
+        : [...currentItems, itemId];
+      if (profile?.email) {
+        localStorage.setItem(`${profile.email}-completedItems`, JSON.stringify(updatedCompletedItems));
+        postCompletedItem(profile.email, updatedCompletedItems);
+      }
+      return updatedCompletedItems;
+    });
   };
 
   const uniqueYears = useMemo(() => {

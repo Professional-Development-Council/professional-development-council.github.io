@@ -1,10 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
-
+import {useRouter} from 'next/router';
 const ProfileContext = createContext();
 
 export const ProfileProvider = ({ children }) => {
-  const [profile, setProfile] = useState({});
-
+  const [profile, setProfile] = useState();
+  const router = useRouter();
   useEffect(() => {
     const storedProfile = localStorage.getItem('profile');
     if (storedProfile) {
@@ -18,7 +18,8 @@ export const ProfileProvider = ({ children }) => {
   };
 
   const logout = () => {
-    setProfile(null);
+    router.push('/').then(() => window.location.reload());
+    setProfile();
     localStorage.removeItem('profile');
   };
 

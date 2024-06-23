@@ -10,7 +10,6 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const { profile, login, logout } = useContext(ProfileContext); // Use the context
   const [user, setUser] = useState(null);
-
   const handleClick = () => {
     setClick(!click);
   };

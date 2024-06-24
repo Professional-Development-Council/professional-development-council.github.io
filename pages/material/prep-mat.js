@@ -4,7 +4,7 @@ import ProfileContext from '../../components/ProfileContext';
 
 const PrepMat = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [yearFilter, setYearFilter] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage] = useState(20);
@@ -14,11 +14,12 @@ const PrepMat = () => {
   const scriptURL = "https://script.google.com/macros/s/AKfycbwVZ7kHNm81gFN6M1XBu6oteGUxJZNpYj8_T0Z0R9E7vUKV6NOA7y6T4a_8JYDhcSeq/exec";
 
   const fetchData = useCallback(async () => {
+    // setLoading(true);
     try {
       const response = await fetch(scriptURL);
       const result = await response.json();
       setData(result);
-      setLoading(false);
+      // setLoading(false)
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -27,7 +28,7 @@ const PrepMat = () => {
   const fetchUserData = useCallback(async () => {
     if (profile) {
       try {
-        const response = await fetch(` https://ap-south-1.aws.data.mongodb-api.com/app/application-0-gqhlryg/endpoint/getData?email=${profile.email}`, {
+        const response = await fetch(`https://ap-south-1.aws.data.mongodb-api.com/app/application-0-gqhlryg/endpoint/getData?email=${profile.email}`, {
           headers: {
             Authorization: `Bearer ${profile.access_token}`,
           },
@@ -42,9 +43,14 @@ const PrepMat = () => {
   }, [profile]);
 
   useEffect(() => {
-    fetchData();
-    fetchUserData();
-  }, [fetchData, fetchUserData]);
+    const synchronizeData = async () => {
+      await fetchData();
+      await fetchUserData();
+      // setLoading(false);
+    };
+
+    synchronizeData();
+  }, [fetchData, fetchUserData, profile]);
 
   useEffect(() => {
     if (profile?.email) {
@@ -101,11 +107,15 @@ const PrepMat = () => {
     setCurrentPage(pageNumber);
   }, []);
 
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div className='main-container'>
       <Head>
         <title>PrepMat</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Preparation material for Placements and Internships" />
       </Head>
       <header id="page-header">
         <div className="page-heading">
@@ -115,6 +125,19 @@ const PrepMat = () => {
       </header>
       <div className="page-container">
         <p>Prepmat is essential for those who wish to access company-specific material for internships and placements. The material serves as an inception to boost your preparation over technical rounds, coding rounds, and aptitude tests. As you lay your hands on Prepmat, you will get acknowledged with the know-how of the different rounds, interview tips, and commonly asked questions.</p>
+        <div className="dashboard-container">
+        <div className="dashboard-header">
+          <h3>Hey {profile?.name}! you have completed </h3>
+          <p className="completed-text">{completedItems.length} / 264</p>
+          <h3>modules</h3>
+        </div>
+        <div className="progress-bar-container">
+          <div
+            className="progress-bar"
+            style={{ width: `${(completedItems.length / 264) * 100}%` }}
+          ></div>
+        </div>
+        </div>
 
         <div className="filter-container-item">
           Select Year: 
@@ -125,13 +148,7 @@ const PrepMat = () => {
             ))}
           </select>
         </div>
-        <div>
-          <h1>Completed</h1>
-        </div>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <>
+          <div>
             <div className='row'>
               {currentData.map((item, index) => (
                 <div className="col-md-3" key={item.Id}>
@@ -168,8 +185,7 @@ const PrepMat = () => {
                 </div>
               ))}
             </div>
-          </>
-        )}
+          </div>
       </div>
     </div>
   );

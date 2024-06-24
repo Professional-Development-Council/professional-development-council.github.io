@@ -20,6 +20,7 @@ export const ProfileProvider = ({ children }) => {
   const logout = () => {
     router.push('/').then(() => window.location.reload());
     setProfile();
+    localStorage.removeItem('completedItem');
     localStorage.removeItem('profile');
   };
 

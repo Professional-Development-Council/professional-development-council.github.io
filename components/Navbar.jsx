@@ -133,9 +133,17 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="nav-item">
-            <Link href="/resume_review" className="nav-links" onClick={handleClick} >
-              Resume Review
-            </Link>
+            <button className="nav-dropbtn">
+            Resume Corner <i className="fa fa-angle-down" aria-hidden="true"></i>
+            </button>
+            <div className="dropdown-content">
+              <Link href="/resume_review" className="drop-nav-links" onClick={handleClick}>
+                Resume Review
+              </Link>
+              <Link href="https://kishan-ved.github.io/resume_generator/resumegenerator.html" className="drop-nav-links" onClick={handleClick}>
+                Resume Builder
+              </Link>
+            </div>
           </div>
           <div className="nav-item">
             {profile ? (

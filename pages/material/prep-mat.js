@@ -10,6 +10,7 @@ const PrepMat = () => {
   const [dataPerPage] = useState(20);
   const { profile } = useContext(ProfileContext);
   const [completedItems, setCompletedItems] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwVZ7kHNm81gFN6M1XBu6oteGUxJZNpYj8_T0Z0R9E7vUKV6NOA7y6T4a_8JYDhcSeq/exec";
 
@@ -94,8 +95,10 @@ const PrepMat = () => {
   }, [data]);
 
   const filteredArticles = useMemo(() => {
-    return data.filter(article => yearFilter === 'All' || article.Year === yearFilter);
-  }, [data, yearFilter]);
+    return data.filter(article => 
+      (yearFilter === 'All' || article.Year === yearFilter) &&
+      article.CompanyName.toLowerCase().includes(searchQuery.toLowerCase()));
+  }, [data, yearFilter, searchQuery]);
 
   const indexOfLastData = currentPage * dataPerPage;
   const indexOfFirstData = indexOfLastData - dataPerPage;
@@ -106,10 +109,6 @@ const PrepMat = () => {
   const paginate = useCallback((pageNumber) => {
     setCurrentPage(pageNumber);
   }, []);
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <div className='main-container'>
@@ -127,9 +126,9 @@ const PrepMat = () => {
         <p>Prepmat is essential for those who wish to access company-specific material for internships and placements. The material serves as an inception to boost your preparation over technical rounds, coding rounds, and aptitude tests. As you lay your hands on Prepmat, you will get acknowledged with the know-how of the different rounds, interview tips, and commonly asked questions.</p>
         <div className="dashboard-container">
         <div className="dashboard-header">
-          <h3>Hey {profile?.name}! you have completed </h3>
-          <p className="completed-text">{completedItems.length} / 264</p>
-          <h3>modules</h3>
+          <h3>Hey {profile?.name}! you have completed {completedItems.length}/264 modules </h3>
+          {/* <p className="completed-text"></p> */}
+          {/* <h3>modules</h3> */}
         </div>
         <div className="progress-bar-container">
           <div
@@ -138,15 +137,26 @@ const PrepMat = () => {
           ></div>
         </div>
         </div>
-
-        <div className="filter-container-item">
-          Select Year: 
-          <select className='publication-filter' value={yearFilter} onChange={(e) => setYearFilter(e.target.value)}>
-            <option value='All'>All</option>
-            {uniqueYears.map((year, index) => (
-              <option key={index} value={year}>{year}</option>
-            ))}
-          </select>
+        <div className="filter-container">
+          <div className="filter-container-item">
+            Select Year: 
+            <select className='publication-filter' value={yearFilter} onChange={(e) => setYearFilter(e.target.value)}>
+              <option value='All'>All</option>
+              {uniqueYears.map((year, index) => (
+                <option key={index} value={year}>{year}</option>
+              ))}
+            </select>
+          </div>
+          <div className="search-container">
+            Search by Company Name:
+            <input
+              type="text"
+              placeholder="Search by Item Name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input"
+            />
+          </div>
         </div>
           <div>
             <div className='row'>

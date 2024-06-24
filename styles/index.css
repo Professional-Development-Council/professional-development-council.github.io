@@ -1246,11 +1246,11 @@ a {
   color: #333;
 }
 
-.completed-text {
+/* .completed-text {
   margin: 0;
   font-size: 16px;
   color: #666;
-}
+} */
 
 .progress-bar-container {
   background-color: #e0e0e0;
@@ -1265,4 +1265,16 @@ a {
   background-color: #1761ffdc;
   height: 100%;
   transition: width 0.3s ease;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-container {
+  flex: 1;
+  margin: 0 10px;
 }

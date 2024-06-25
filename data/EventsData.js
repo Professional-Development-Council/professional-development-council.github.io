@@ -13,7 +13,7 @@ export const EventsData =[
     {
         "EventName": "Resume Builiding Session",
         "date": "23 June 2024",
-        "location": "Codeforces, Leetcode, Codechef",
+        "location": "Online",
         "description": "A guide to build a perfect resume for your dream job by Aditya Bhujbal and our beloved ex PDC secretary Dhairya Shah.",
         "registration": "",
         "resources": "https://drive.google.com/drive/folders/1d9JLh_pMrXVWTB9Si0IP0RdkeZMTpP7u",

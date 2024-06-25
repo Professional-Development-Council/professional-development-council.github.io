@@ -49,7 +49,7 @@ export const EventsData =[
         "location": "For industrial internship Preparation",
         "description": "We are excited to launch our annual Industrial Experience Series for internship season! This series aims to provide invaluable insights into various companies and their interview processes, as shared by our seniors who have secured internships in these organizations. Currently Sessions organized for DE Shaw, Barclays, Skan AI, Oracle, Texas Instruments, Atlassian, JSW, NVIDIA, Media.Net, Off-Campus",
         "registration": "",
-        "resources": "",
+        "resources": "https://drive.google.com/drive/folders/1--Hicu_gR7EvO9MDvAlMxuqMQRHy_SvM",
         "year": "2024-25",
         "image": "/assets/images/stock3.jpg",
         "announce": "true"
@@ -60,7 +60,7 @@ export const EventsData =[
         "location": "For B.Tech 23 and B.Tech 22",
         "description": "Have you been wondering how to make the most of this three-month-long summer break? Do you want to hear from someone who has made the best of the resources available to them?\n\nThe Professional Development Council presents to you a Productive Summer Vacation Session where you get to hear from some of those seniors across all branches, who have made it to outstanding internships (or placements).",
         "registration": "",
-        "resources": "",
+        "resources": "https://drive.google.com/drive/folders/1Nsrzh9wyWO_B9WJULmQE12i4LHWSUdr_",
         "year": "2024-25",
         "image": "/assets/images/stock1.jpg",
         "announce": "true"

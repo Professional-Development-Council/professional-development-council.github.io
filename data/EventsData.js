@@ -27,6 +27,7 @@ export const EventsData =[
         "location": "In collaboration with Student Academic Council",
         "description": "The Student Academic Council, in collaboration with the Professional Development Council, is organizing a webinar to guide the GRE and TOEFL aspirants. This session would benefit students opting to appear for the exam this year or the upcoming year.",
         "registration": "",
+        "resources": "https://drive.google.com/drive/folders/1Q0RXoZshzebOQZ7oHaI6RjwCVFPUOiRM",
         "year": "2024-25",
         "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihbtzTlLYChKbKwjrnEmvW8-eGREVVHq40E6S8KSUOsAIkfUNB8LUVrnB3HflFzPLLFuaoSBxkz_mbjz-4SJu6JboLKgKJdUy3s=s1600-rw-v1",
         "announce": "true"
@@ -37,6 +38,7 @@ export const EventsData =[
         "location": "In collaboration with Student Academic Council",
         "description": "We are pleased to present another important webinar on guidance for the CAT and GMAT exams, essential for those aspiring to enter B-schools. As many of you know, these are two of the most sought-after exams for gaining admission to top B-schools. The CAT is a standardized test required for most top B-Schools in India, including the IIMs. The GMAT is an internationally accepted test necessary for admission to top B-schools worldwide and some in India, such as the Indian School of Business (ISB).",
         "registration": "",
+        "resources": "https://drive.google.com/drive/folders/1NMfcEeZ0sFmSWO_GeUYT4_EUrju2tPIW",
         "year": "2024-25",
         "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBOt3LYqhO1rPOeURKL6ODwZsbQ4cS3Rubvk3dcJds9e_sW2rmICuCkR9X9Y_r0vU1PKyUspEbyD6gMc8L5rMN_bnauXfkSw=s1600-rw-v1",
         "announce": "true"
@@ -47,6 +49,7 @@ export const EventsData =[
         "location": "For industrial internship Preparation",
         "description": "We are excited to launch our annual Industrial Experience Series for internship season! This series aims to provide invaluable insights into various companies and their interview processes, as shared by our seniors who have secured internships in these organizations. Currently Sessions organized for DE Shaw, Barclays, Skan AI, Oracle, Texas Instruments, Atlassian, JSW, NVIDIA, Media.Net, Off-Campus",
         "registration": "",
+        "resources": "",
         "year": "2024-25",
         "image": "/assets/images/stock3.jpg",
         "announce": "true"
@@ -57,6 +60,7 @@ export const EventsData =[
         "location": "For B.Tech 23 and B.Tech 22",
         "description": "Have you been wondering how to make the most of this three-month-long summer break? Do you want to hear from someone who has made the best of the resources available to them?\n\nThe Professional Development Council presents to you a Productive Summer Vacation Session where you get to hear from some of those seniors across all branches, who have made it to outstanding internships (or placements).",
         "registration": "",
+        "resources": "",
         "year": "2024-25",
         "image": "/assets/images/stock1.jpg",
         "announce": "true"

@@ -45,6 +45,9 @@ const EventsDetails = () => {
                                         {Event.registration && (
                                             <p><a href={Event.registration} target="_blank" style={{color: "blue"}}> Registration Link</a> </p>
                                         )}
+                                        {Event.resources && (
+                                            <p><a href={Event.resources} target="_blank" style={{color: "blue"}}> Resources</a> </p>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="col-md-6">

@@ -9,6 +9,15 @@ export const EventsData =[
         "registration": "https://forms.gle/SzPxXEtzTu9WvaET6",
         "year": "2024-25",
         "image": "/assets/images/Coding_Nights-01.png",
+    },
+    {
+        "EventName": "Resume Builiding Session",
+        "date": "23 June 2024",
+        "location": "Codeforces, Leetcode, Codechef",
+        "description": "Online Coding Contest, Prizes worth 11k.",
+        "registration": "https://forms.gle/SzPxXEtzTu9WvaET6",
+        "year": "2024-25",
+        "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZvFy1XKcOcc4VJUEGzuRdjM1xGb5lJXhGO6OiQUXzxcF5WgtaclXo4pT94T-WyGZL5dRG0Q8z_gxdrHVpefeRCHeUToKT98Pw=w1960-h3484-rw-v1",
         "announce": "true"
     },
     {

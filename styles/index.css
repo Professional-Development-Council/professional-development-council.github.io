@@ -1216,6 +1216,14 @@ a {
   font-size: 1.5rem;
   cursor: pointer;
 }
+.Image-popup {
+    width: auto;
+    height: 45vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 /* 
   /////////////////////

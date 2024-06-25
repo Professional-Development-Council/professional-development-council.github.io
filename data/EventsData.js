@@ -14,8 +14,9 @@ export const EventsData =[
         "EventName": "Resume Builiding Session",
         "date": "23 June 2024",
         "location": "Codeforces, Leetcode, Codechef",
-        "description": "Online Coding Contest, Prizes worth 11k.",
-        "registration": "https://forms.gle/SzPxXEtzTu9WvaET6",
+        "description": "A guide to build a perfect resume for your dream job by Aditya Bhujbal and our beloved ex PDC secretary Dhairya Shah.",
+        "registration": "",
+        "resources": "https://drive.google.com/drive/folders/1d9JLh_pMrXVWTB9Si0IP0RdkeZMTpP7u",
         "year": "2024-25",
         "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZvFy1XKcOcc4VJUEGzuRdjM1xGb5lJXhGO6OiQUXzxcF5WgtaclXo4pT94T-WyGZL5dRG0Q8z_gxdrHVpefeRCHeUToKT98Pw=w1960-h3484-rw-v1",
         "announce": "true"

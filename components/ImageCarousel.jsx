@@ -33,7 +33,7 @@ const ImageCarousel = () => {
               <div className="card-item">
                 <div className="card-item-img">
                   <a onClick={() => openModal(item)}>
-                    <Image className='Image-general' src={item.image || "/assets/images/default.jpg"} alt={item.EventName} width={1000} height={1000} />
+                    <Image className='Image-general' src={item.image || "/assets/images/default.jpg"} alt={item.EventName} width={700} height={700} />
                   </a>
                 </div>
                 <div className="card-item-content">

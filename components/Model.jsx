@@ -17,8 +17,11 @@ const Model = ({ event, isOpen, onClose }) => {
         {event.registration && (
           <p><a href={event.registration} target="_blank" style={{color: "blue"}}>Registration Link</a></p>
         )}
+        {event.resources && (
+          <p><a href={event.resources} target="_blank" style={{color: "blue"}}>Resources</a></p>
+        )}
         {event.image && (
-          <Image src={event.image} alt="event" className='Image-general' width={1000} height={1000} />
+          <Image src={event.image} alt="event" className='Image-popup' width={1000} height={1000} />
         )}
       </div>
     </div>

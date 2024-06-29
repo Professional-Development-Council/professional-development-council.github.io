@@ -109,7 +109,7 @@ const Navbar = () => {
                   Placement Talks Videos
                 </Link>
               )}
-              <Link href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0" className="drop-nav-links" onClick={handleClick}>
+              <Link target='_blank' href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0" className="drop-nav-links" onClick={handleClick}>
                 External Opportunities
               </Link>
             </div>
@@ -140,7 +140,7 @@ const Navbar = () => {
               <Link href="/resume_review" className="drop-nav-links" onClick={handleClick}>
                 Resume Review
               </Link>
-              <Link href="https://kishan-ved.github.io/resume_generator/resumegenerator.html" className="drop-nav-links" onClick={handleClick}>
+              <Link target='_blank' href="https://kishan-ved.github.io/resume_generator/resumegenerator.html" className="drop-nav-links" onClick={handleClick}>
                 Resume Builder
               </Link>
             </div>

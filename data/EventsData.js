@@ -2,6 +2,16 @@
 // put new event images https://drive.google.com/drive/u/0/folders/1E5bu1ac3jm4Slxn9CJMi9aIW2cTkD-AU here and update the image path in the data according to the tutorial in the text file.
 export const EventsData =[
     {
+        "EventName": "Focused Groups",
+        "date": "Deadline: 2nd July 2024",
+        "location": "",
+        "description": "Focussed Groups bring together students with similar career interests, allowing you to work towards your goals in a supportive environment. We encourage all the enthusiasts to participate in this initiative.",
+        "registration": "https://docs.google.com/forms/d/e/1FAIpQLSe3SzqKK6V20XChapw0Osw_HqRbxuX7CW9-RLxZa6as8xBMmQ/viewform",
+        "year": "2024-25",
+        "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYa27vGE0qxlRGrdDOp_ltVQnHGiGYKr_EMqQoBLI_DqFTV48egHwi9vJ6j9IBzjz938q9ijC92oEw_qydi21QJBNPdLnUGt5Q=w1960-h3484-rw-v1",
+        "announce": "true"
+    },
+    {
         "EventName": "Coding Nights",
         "date": "May-June 2024",
         "location": "Codeforces, Leetcode, Codechef",

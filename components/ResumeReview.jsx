@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const ResumeReview = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzBRnny_qNITq1-RDvcTLFiEclq0Wqy2qxTbDHREpApT2rIXfoNsPIWeI5HzLAlpTLMvg/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzwFBs7T-QfhKGBikj7K59nAgh6nkLssAutQ6CqdfAxD0XbX3fmpM9Yh41japCp_MTNMA/exec';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,6 +29,8 @@ const ResumeReview = () => {
             <form name="submit-to-google-sheet" className="contact-us-form" data-form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Your Name" className="form-control" name="Name" required />
                 <input type="text" placeholder="Your Email" className="form-control" name="Email" required />
+                <input type="text" placeholder="Your Batch" className="form-control" name="Batch" required />
+                <input type="text" placeholder="Your Department" className="form-control" name="Dept" required />
                 <input type="url" placeholder="Paste your PDF link here..." className="form-control" name="PDFLink" required />
                 <p style={({fontSize: "12px", color: "red"})}>*Please don&apos;t forget to give us pdf comment access</p>   
                 <button className="submit-button" type="submit" disabled={isLoading}>

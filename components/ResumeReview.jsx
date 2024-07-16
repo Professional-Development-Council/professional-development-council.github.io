@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const ResumeReview = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxGYxpP-lWnwwl6GCyG5zcAvZSi1Fqh5-eF7bTXo2m640NcMQBGJgegmWO7muoOD_BH3A/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz5Lwsubm3XU-CrcT8CfyhnmslL-6swWMV-5HGOc05UvWfIpRmQVv5BwxHZM167h6BLvw/exec';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,10 +28,10 @@ const ResumeReview = () => {
         <div>
             <form name="submit-to-google-sheet" className="contact-us-form" data-form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Your Name" className="form-control" name="Name" required />
-                <input type="text" placeholder="Your Email" className="form-control" name="Email" required />
+                <input type="text" placeholder="Your Email" className="form-control" name="Mail" required />
                 <input type="text" placeholder="Your Batch" className="form-control" name="Batch" required />
-                <input type="text" placeholder="Your Department" className="form-control" name="Dept" required />
-                <input type="url" placeholder="Paste your PDF link here..." className="form-control" name="PDFLink" required />
+                <input type="text" placeholder="Your Department" className="form-control" name="Department" required />
+                <input type="url" placeholder="Paste your PDF link here..." className="form-control" name="Resume_Link" required />
                 <p style={({fontSize: "12px", color: "red"})}>*Please don&apos;t forget to give us pdf comment access</p>   
                 <button className="submit-button" type="submit" disabled={isLoading}>
                     {isLoading ? 'Uploading...' : 'Upload'}

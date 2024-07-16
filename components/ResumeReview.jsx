@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const ResumeReview = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz5Lwsubm3XU-CrcT8CfyhnmslL-6swWMV-5HGOc05UvWfIpRmQVv5BwxHZM167h6BLvw/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx7vMFrqFNP2fzKbh-CQPEFxI-e38Q_i2UUIYw-C3g4cn6an9WvZcgDbchX53_m_cN1kg/exec';
 
     const handleSubmit = async (e) => {
         e.preventDefault();

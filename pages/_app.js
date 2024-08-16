@@ -6,8 +6,6 @@ import '../styles/responsive.css'
 import '../styles/events.css'; // Import the global CSS file here
 import { ProfileProvider } from '../components/ProfileContext';
 
-// const CLIENT_ID = process.env.NEXT_PUBLIC_PG_CLIENT_ID;
-
 function MyApp({ Component, pageProps }) {
   return (
     <div>

@@ -11,7 +11,7 @@ import { ProfileProvider } from '../components/ProfileContext';
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <GoogleOAuthProvider clientId="481922227153-kbtp7vbmkvmvj0jnmvlta46rno1m4lig.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
       <ProfileProvider>
         <Navbar />
         <Component {...pageProps} />

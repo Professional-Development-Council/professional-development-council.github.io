@@ -26,7 +26,7 @@ const ImageCarousel = () => {
 
   return (
     <div className="image-carousel-container">
-      <div className="recent-update-section">
+      <div className="card-container">
         <div className="row">
           {announcements.slice(0, displayCount).map((item, index) => (
             <div className='col-md-4' key={index}>

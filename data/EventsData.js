@@ -8,7 +8,7 @@ export const EventsData =[
         "description": "Focussed Groups bring together students with similar career interests, allowing you to work towards your goals in a supportive environment. We encourage all the enthusiasts to participate in this initiative.",
         "registration": "https://docs.google.com/forms/d/e/1FAIpQLSe3SzqKK6V20XChapw0Osw_HqRbxuX7CW9-RLxZa6as8xBMmQ/viewform",
         "year": "2024-25",
-        "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYa27vGE0qxlRGrdDOp_ltVQnHGiGYKr_EMqQoBLI_DqFTV48egHwi9vJ6j9IBzjz938q9ijC92oEw_qydi21QJBNPdLnUGt5Q=w1960-h3484-rw-v1",
+        "image": "/assets/images/Focused-Groups.jpg",
         "announce": "true"
     },
     {
@@ -28,7 +28,7 @@ export const EventsData =[
         "registration": "",
         "resources": "https://drive.google.com/drive/folders/1d9JLh_pMrXVWTB9Si0IP0RdkeZMTpP7u",
         "year": "2024-25",
-        "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZvFy1XKcOcc4VJUEGzuRdjM1xGb5lJXhGO6OiQUXzxcF5WgtaclXo4pT94T-WyGZL5dRG0Q8z_gxdrHVpefeRCHeUToKT98Pw=w1960-h3484-rw-v1",
+        "image": "/assets/images/Resume-Sessions.jpg",
         "announce": "true"
     },
     {
@@ -39,7 +39,7 @@ export const EventsData =[
         "registration": "",
         "resources": "https://drive.google.com/drive/folders/1Q0RXoZshzebOQZ7oHaI6RjwCVFPUOiRM",
         "year": "2024-25",
-        "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihbtzTlLYChKbKwjrnEmvW8-eGREVVHq40E6S8KSUOsAIkfUNB8LUVrnB3HflFzPLLFuaoSBxkz_mbjz-4SJu6JboLKgKJdUy3s=s1600-rw-v1",
+        "image": "/assets/images/Webinar.jpg",
         "announce": "true"
     },
     {
@@ -50,7 +50,7 @@ export const EventsData =[
         "registration": "",
         "resources": "https://drive.google.com/drive/folders/1NMfcEeZ0sFmSWO_GeUYT4_EUrju2tPIW",
         "year": "2024-25",
-        "image": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZBOt3LYqhO1rPOeURKL6ODwZsbQ4cS3Rubvk3dcJds9e_sW2rmICuCkR9X9Y_r0vU1PKyUspEbyD6gMc8L5rMN_bnauXfkSw=s1600-rw-v1",
+        "image": "/assets/images/Webinar.jpg",
         "announce": "true"
     },
     {

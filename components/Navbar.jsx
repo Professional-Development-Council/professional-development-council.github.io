@@ -137,7 +137,7 @@ const Navbar = () => {
             Resume Corner <i className="fa fa-angle-down" aria-hidden="true"></i>
             </button>
             <div className="dropdown-content">
-              <Link href="/resume_review" className="drop-nav-links" onClick={handleClick}>
+              <Link target='_blank' href="https://forms.gle/rfT9XLtjUUdBbGUL9" className="drop-nav-links" onClick={handleClick}>
                 Resume Review
               </Link>
               <Link target='_blank' href="https://kishan-ved.github.io/resume_generator/resumegenerator.html" className="drop-nav-links" onClick={handleClick}>

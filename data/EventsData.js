@@ -2,6 +2,28 @@
 // put new event images https://drive.google.com/drive/u/0/folders/1E5bu1ac3jm4Slxn9CJMi9aIW2cTkD-AU here and update the image path in the data according to the tutorial in the text file.
 export const EventsData =[
     {
+        "EventName": "LinkedIn & Resume Building Session",
+        "date": "9th June 2025",
+        "location": "Online",
+        "description": "A guide to build a perfect resume for your dream job by ex CDS SPM Siddharth Shah and our beloved ex PDC secretary Aaryan Darad.",
+        "registration": "",
+        "resources": "https://drive.google.com/drive/folders/1u8uPWqK5F0YYrMMNhodMNE5oIQXLshbo",
+        "year": "2024-25",
+        "image": "/assets/images/Resume-Sessions.jpg",
+        "announce": "true"
+    },
+    {
+        "EventName": "Industrial Experience Series for Internships",
+        "date": "29 May onwards",
+        "location": "For industrial internship Preparation",
+        "description": "We are excited to launch our annual Industrial Experience Series for internship season! This series aims to provide invaluable insights into various companies and their interview processes, as shared by our seniors who have secured internships in these organizations. Currently Sessions organized for DE Shaw, Barclays, Skan AI, Oracle, Texas Instruments, Atlassian, JSW, NVIDIA, Media.Net, Off-Campus",
+        "registration": "",
+        "resources": "https://drive.google.com/drive/folders/1E56xC0sLRLgcd6g_hnqQ3gYTWFTjgydu?usp=drive_link",
+        "year": "2024-25",
+        "image": "/assets/images/stock3.jpg",
+        "announce": "true"
+    },
+    {
         "EventName": "Focused Groups",
         "date": "Deadline: 2nd July 2024",
         "location": "",

@@ -1,0 +1,257 @@
+
+// This file contains the data of the current team members of the club.
+export const TeamData =[
+  {
+    "name": "Aaryan Darad",
+    "image": "./assets/images/IMG_20240225_001511-Photoroom.png-Photoroom - Professional Development Council IITGN.jpeg",
+    "position": "PDC Secretary",
+    "level": "Senior Undergraduate",
+    "email": "daradaaryan@iitgn.ac.in",
+    "contact": "99985 83773",
+    "linkedin": "https://www.linkedin.com/in/aaryan-darad-b1351a1ab",
+    "profile": "",
+    "github": "https://github.com/daradaaryan"
+  },
+  {
+    "name": "Mihir Agarwal",
+    "image": "./assets/images/Mihir_Agarwal.jpg",
+    "position": "Special Advisor",
+    "level": "Senior Undergraduate",
+    "email": "agarwalmihir@iitgn.ac.in",
+    "contact": "88511 42209",
+    "linkedin": "https://www.linkedin.com/in/mihir-agarwal-33b913188/",
+    "profile": "https://agarwal-mihir.github.io/",
+    "github": "https://github.com/agarwal-mihir"
+  },
+  {
+    "name": "Siddhi Rajpurohit",
+    "image": "./assets/images/Siddhi_Rajpurohit.jpg",
+    "position": "Special Advisor",
+    "level": "Senior Undergraduate",
+    "email": "rajpurohitsiddhi@iitgn.ac.in",
+    "contact": "86903 99475",
+    "linkedin": "https://www.linkedin.com/in/siddhi-rajpurohit-21085b229/",
+    "profile": "",
+    "github": "https://github.com/siddhiraj09"
+  },
+  {
+    "name": "Aadya Arora",
+    "image": "./assets/images/Aadya_Arora.png",
+    "position": "Coordinator for Career Exposure and Guidance",
+    "level": "Junior Undergraduate",
+    "email": "aadya.arora@iitgn.ac.in",
+    "contact": "93104 99169",
+    "linkedin": "https://www.linkedin.com/in/aadya-arora-069253259/",
+    "profile": "",
+    "github": "https://github.com/AADYA-ARORA"
+  },
+  {
+    "name": "Mumuksh Jain",
+    "image": "./assets/images/Mumuksh_Jain.jpg",
+    "position": "Coordinator for Industrial Training and Preparation",
+    "level": "Junior Undergraduate",
+    "email": "mumuksh.jain@iitgn.ac.in",
+    "contact": "84596 10047",
+    "linkedin": "https://www.linkedin.com/in/mumuksh-jain-104103259/",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Vidhi Shah",
+    "image": "./assets/team/Vidhi Shah.jpg",
+    "position": "Coordinator for Research and Higher Education",
+    "level": "Senior Undergraduate",
+    "email": "vidhi.shah@iitgn.ac.in",
+    "contact": "97234 22307",
+    "linkedin": "https://www.linkedin.com/in/vidhi-shah-836331276",
+    "profile": "",
+    "github": "https://github.com/Vidhishahahaha"
+  },
+  {
+    "name": "Parth Govale",
+    "image": "./assets/images/Parth_Govale.webp",
+    "position": "Webmaster",
+    "level": "Junior Undergraduate",
+    "email": "parth.govale@iitgn.ac.in",
+    "contact": "96198 69044",
+    "linkedin": "https://www.linkedin.com/in/parth-govale-a65120277/",
+    "profile": "https://demolus13.github.io/",
+    "github": "https://github.com/Demolus13"
+  },
+  {
+    "name": "Chandrabhan Patel",
+    "image": "./assets/images/Chandrabhan_Patel.jpg",
+    "position": "Webmaster",
+    "level": "Junior Undergraduate",
+    "email": "chandrabhan.patel@iitgn.ac.in",
+    "contact": "63764 71802",
+    "linkedin": "https://in.linkedin.com/in/cpatel321",
+    "profile": "https://chandrabhan.tech/",
+    "github": "https://github.com/cpatel321"
+  },
+  {
+    "name": "Jayraj Dulange",
+    "image": "./assets/images/Jayraj_Dulange.jpg",
+    "position": "Webmaster",
+    "level": "Junior Undergraduate",
+    "email": "jayraj.jayraj@iitgn.ac.in",
+    "contact": "91456 09395",
+    "linkedin": "https://www.linkedin.com/in/jayraj-dulange-91b74a251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "profile": "",
+    "github": "https://www.github.com/Deus1704"
+  },
+  {
+    "name": "Anmol Bhargava",
+    "image": "./assets/images/Anmol_Bhargava.jpg",
+    "position": "General Council Member",
+    "level": "Junior Undergraduate",
+    "email": "anmol.bhargava@iitgn.ac.in",
+    "contact": "95715 71943",
+    "linkedin": "https://www.linkedin.com/in/anmol-bhargava-a3b4b4260/",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Mayank Kumbhat ",
+    "image": "./assets/images/Mayank Kumbhat.jpg",
+    "position": "General Council Member",
+    "level": "Sophomore",
+    "email": "23110204@iitgn.ac.in",
+    "contact": "95302 70988",
+    "linkedin": "https://www.linkedin.com/in/mayank-kumbhat-11428828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Ayush Umare",
+    "image": "./assets/images/Ayush_Umare.jpg",
+    "position": "General Council Member",
+    "level": "Sophomore",
+    "email": "23110346@iitgn.ac.in",
+    "contact": "78209 75758",
+    "linkedin": "https://www.linkedin.com/in/ayush-umare-3b7007287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Aditya Mehta",
+    "image": "./assets/images/Aditya_Mehta_1.png",
+    "position": "General Council Member",
+    "level": "Junior Undergraduate",
+    "email": "mehta.aditya@iitgn.ac.in",
+    "contact": "94294 28442",
+    "linkedin": "https://www.linkedin.com/in/aditya-mehta-925b36272/",
+    "profile": "",
+    "github": "https://github.com/adityamehta19"
+  },
+  {
+    "name": "Akshat Mohan",
+    "image": "./assets/images/Akshat_Mohan.jpg",
+    "position": "General Council Member",
+    "level": "Postgraduate",
+    "email": "akshat.mohan@iitgn.ac.in",
+    "contact": "80961 41113",
+    "linkedin": "https://www.linkedin.com/in/akshat-mohan-a4aa64196",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Vardayini Agrawal",
+    "image": "./assets/images/d6ef2188-973b-42c8-a642-ee0803357bf8 - Vardayini Agrawal 23110353.jpeg",
+    "position": "General Council Member",
+    "level": "Sophomore",
+    "email": "23110353@iitgn.ac.in",
+    "contact": "70214 46279",
+    "linkedin": "http://linkedin.com/in/vardayini-agrawal-071a99213",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Aditya Mehta ",
+    "image": "./assets/images/Aditya_Mehta_2.jpeg",
+    "position": "General Council Member",
+    "level": "Junior Undergraduate",
+    "email": "aditya.mehta@iitgn.ac.in",
+    "contact": "63547 65350",
+    "linkedin": "https://www.linkedin.com/in/aditya-mehta-6ba290256/",
+    "profile": "https://aditya-me13.github.io/",
+    "github": "https://github.com/aditya-me13"
+  },
+  {
+    "name": "Sneha Gautam",
+    "image": "./assets/images/Sneha_Gautam.jpg",
+    "position": "General Council Member",
+    "level": "Junior Undergraduate",
+    "email": "sneha.gautam@iitgn.ac.in",
+    "contact": "95609 59862",
+    "linkedin": "https://www.linkedin.com/in/sneha-gautam-792670259/",
+    "profile": "",
+    "github": "https://github.com/SG00428"
+  },
+  {
+    "name": "M. Lakshmi Manasa",
+    "image": "./assets/images/Lakshmi_Manasa.jpg",
+    "position": "General Council Member",
+    "level": "Sophomore",
+    "email": "23110193@iitgn.ac.in",
+    "contact": "99597 03730",
+    "linkedin": "www.linkedin.com/in/lakshmimanasa",
+    "profile": "",
+    "github": "https://github.com/Manasa2810"
+  },
+  {
+    "name": "Omkar Rajeev Prabhu",
+    "image": "./assets/images/Omkar_Prabhu.jpg",
+    "position": "General Council Member",
+    "level": "Junior Undergraduate",
+    "email": "omkar.prabhu@iitgn.ac.in",
+    "contact": "83108 31731",
+    "linkedin": "https://www.linkedin.com/in/omkar-rajeev-prabhu/",
+    "profile": "",
+    "github": "https://github.com/OmkarRPrabhu007"
+  },
+  {
+    "name": "Mitali Agrawal",
+    "image": "./assets/images/Mitali_Agrawal.jpg",
+    "position": "General Council Member",
+    "level": "Sophomore",
+    "email": "23110206@iitgn.ac.in",
+    "contact": "70580 50073",
+    "linkedin": "https://www.linkedin.com/in/mitali-agrawal-7212a028a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Shree Hiwanj",
+    "image": "./assets/images/Shree_Hiwanj.jpg",
+    "position": "General Council Member",
+    "level": "Sophomore",
+    "email": "23110305@iitgn.ac.in",
+    "contact": "72498 91963",
+    "linkedin": "https://www.linkedin.com/in/shreehiwanj",
+    "profile": "",
+    "github": "https://github.com/the-eggbeater"
+  },
+  {
+    "name": "Devender Singh",
+    "image": "./assets/images/Devender_Singh.jpg",
+    "position": "Social Media Manager",
+    "level": "Postgraduate",
+    "email": "devender.singh@iitgn.ac.in",
+    "contact": "70159 51966",
+    "linkedin": "",
+    "profile": "",
+    "github": ""
+  },
+  {
+    "name": "Nagare Riya Babasaheb",
+    "image": "./assets/images/Riya.png",
+    "position": "Social Media Manager",
+    "level": "Sophomore",
+    "email": "23110214@iitgn.ac.in",
+    "contact": "99225 31082",
+    "linkedin": "https://www.linkedin.com/in/riya-nagare-95408628b",
+    "profile": "",
+    "github": ""
+  },
+ ]

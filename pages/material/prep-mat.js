@@ -4,6 +4,7 @@ import ProfileContext from '../../components/ProfileContext';
 
 const PrepMat = () => {
   const [data, setData] = useState([]);
+  const [len, setLen] = useState(0);
   // const [loading, setLoading] = useState(true);
   const [yearFilter, setYearFilter] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,6 +21,7 @@ const PrepMat = () => {
       const response = await fetch(scriptURL);
       const result = await response.json();
       setData(result);
+      setLen(result.length);
       // setLoading(false)
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -126,14 +128,14 @@ const PrepMat = () => {
         <p>Prepmat is essential for those who wish to access company-specific material for internships and placements. The material serves as an inception to boost your preparation over technical rounds, coding rounds, and aptitude tests. As you lay your hands on Prepmat, you will get acknowledged with the know-how of the different rounds, interview tips, and commonly asked questions.</p>
         <div className="dashboard-container">
         <div className="dashboard-header">
-          <h3>Hey {profile?.name}! you have completed {completedItems.length}/264 modules </h3>
+          <h3>Hey {profile?.name}! you have completed {completedItems.length}/{len} modules </h3>
           {/* <p className="completed-text"></p> */}
           {/* <h3>modules</h3> */}
         </div>
         <div className="progress-bar-container">
           <div
             className="progress-bar"
-            style={{ width: `${(completedItems.length / 264) * 100}%` }}
+            style={{ width: `${(completedItems.length / len) * 100}%` }}
           ></div>
         </div>
         </div>

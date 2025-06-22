@@ -31,16 +31,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/auth/signin.js"
-    ],
-    "/contact": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/contact.js"
-    ],
-    "/material/placement-talks": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/material/placement-talks.js"
     ]
   },
   "ampFirstPages": []

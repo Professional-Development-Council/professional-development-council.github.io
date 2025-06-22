@@ -89,18 +89,7 @@ export default function SignIn({ providers }) {
             <p>
               Please use your IIT Gandhinagar email (@iitgn.ac.in) to sign in.
             </p>
-            {/* <div className="signin-instructions">
-              <p>
-                <strong>Important:</strong> Make sure you:
-              </p>
-              <ul>
-                <li>Use your official IIT Gandhinagar email account</li>
-                <li>Select the account ending with @iitgn.ac.in</li>
-                <li>Have access to your institutional Google account</li>
-              </ul>
-            </div> */}
-
-            {providers &&
+            {/* {providers &&
               Object.values(providers).map((provider) => (
                 <div key={provider.name} className="provider-container">
                   <button
@@ -111,7 +100,16 @@ export default function SignIn({ providers }) {
                     Sign in with {provider.name}
                   </button>
                 </div>
-              ))}
+              ))} */}
+              <div  className="provider-container">
+                <button
+                  onClick={() => handleSignIn('google')}
+                  className="signin-button"
+                >
+                  <span className="signin-icon">🔐</span>
+                  Sign in with Google
+                </button>
+              </div>
           </div>
 
         </div>

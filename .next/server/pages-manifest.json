@@ -2,10 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/material/placement-talks": "pages/material/placement-talks.js",
-  "/contact": "pages/contact.js",
   "/auth/signin": "pages/auth/signin.js",
-  "/auth/error": "pages/auth/error.js"
+  "/": "pages/index.js"
 }

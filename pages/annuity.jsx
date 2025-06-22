@@ -16,12 +16,7 @@ const AnnuityClub = () => {
     });
   }, []);
 
-  const stats = [
-    { number: "500+", label: "Members Trained", color: "#2ecc71" },
-    { number: "50+", label: "Workshops Conducted", color: "#3498db" },
-    { number: "₹10L+", label: "Portfolio Value Managed", color: "#f39c12" },
-    { number: "95%", label: "Placement Success Rate", color: "#e74c3c" },
-  ];
+ 
 
   const services = [
     {
@@ -223,23 +218,6 @@ const AnnuityClub = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="annuity-stats-section" data-aos="fade-up">
-          <div className="annuity-stats-grid">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="annuity-stat-item"
-                data-aos="zoom-in"
-                data-aos-delay={index * 150}
-                style={{ "--accent-color": stat.color }}
-              >
-                <h3>{stat.number}</h3>
-                <p>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* About Section */}
         {activeTab === "about" && (

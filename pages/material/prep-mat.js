@@ -1,20 +1,14 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useMemo,
-  useContext,
-} from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
-import ProfileContext from "../../components/ProfileContext";
+import { useSession } from "next-auth/react";
 
 const PrepMat = () => {
   const [data, setData] = useState([]);
   const [yearFilter, setYearFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage] = useState(12);
-  const { profile } = useContext(ProfileContext);
+  const { data: session } = useSession();
   const [completedItems, setCompletedItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
@@ -37,13 +31,13 @@ const PrepMat = () => {
   }, []);
 
   const fetchUserData = useCallback(async () => {
-    if (profile) {
+    if (session?.user) {
       try {
         const response = await fetch(
-          `https://ap-south-1.aws.data.mongodb-api.com/app/application-0-gqhlryg/endpoint/getData?email=${profile.email}`,
+          `https://ap-south-1.aws.data.mongodb-api.com/app/application-0-gqhlryg/endpoint/getData?email=${session.user.email}`,
           {
             headers: {
-              Authorization: `Bearer ${profile.access_token}`,
+              Authorization: `Bearer ${session.user.accessToken}`,
             },
           },
         );
@@ -54,7 +48,7 @@ const PrepMat = () => {
         console.error("Error fetching user data:", error);
       }
     }
-  }, [profile]);
+  }, [session]);
 
   useEffect(() => {
     const synchronizeData = async () => {
@@ -63,18 +57,18 @@ const PrepMat = () => {
     };
 
     synchronizeData();
-  }, [fetchData, fetchUserData, profile]);
+  }, [fetchData, fetchUserData, session]);
 
   useEffect(() => {
-    if (profile?.email) {
+    if (session?.user?.email) {
       const storedCompletedItems = localStorage.getItem(
-        `${profile.email}-completedItems`,
+        `${session.user.email}-completedItems`,
       );
       if (storedCompletedItems) {
         setCompletedItems(JSON.parse(storedCompletedItems));
       }
     }
-  }, [profile]);
+  }, [session]);
 
   const postCompletedItem = async (email, completedPDFList) => {
     try {
@@ -84,7 +78,7 @@ const PrepMat = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${profile.access_token}`,
+            Authorization: `Bearer ${session.user.accessToken}`,
           },
           body: JSON.stringify({
             email,
@@ -103,12 +97,12 @@ const PrepMat = () => {
       const updatedCompletedItems = currentItems.includes(itemId)
         ? currentItems.filter((item) => item !== itemId)
         : [...currentItems, itemId];
-      if (profile?.email) {
+      if (session?.user?.email) {
         localStorage.setItem(
-          `${profile.email}-completedItems`,
+          `${session.user.email}-completedItems`,
           JSON.stringify(updatedCompletedItems),
         );
-        postCompletedItem(profile.email, updatedCompletedItems);
+        postCompletedItem(session.user.email, updatedCompletedItems);
       }
       return updatedCompletedItems;
     });
@@ -277,7 +271,7 @@ const PrepMat = () => {
         >
           <div className="dashboard-header-section">
             <div className="user-welcome">
-              <h2>Welcome back, {profile?.name || "Student"}!</h2>
+              <h2>Welcome back, {session?.user?.name || "Student"}!</h2>
               <p>Continue your preparation journey</p>
             </div>
             <div className="achievement-badge">

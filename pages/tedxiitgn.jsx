@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import TEDxLogo from "../public/assets/images/tedxiitgn.jpg";
+import TEDxLogo from "../public/assets/images/TEDx_Logo_Short.png";
 
 const TEDxIITGandhinagar = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -48,7 +48,7 @@ const TEDxIITGandhinagar = () => {
       date: "March 15, 2024",
       speakers: 12,
       audience: 500,
-      status: "upcoming",
+      status: "completed",
     },
     {
       year: "2023",
@@ -149,24 +149,12 @@ const TEDxIITGandhinagar = () => {
             data-aos-delay="700"
           >
             <a
-              href="https://www.tedxiitgandhinagar.in/"
+              href="https://tedxiitgandhinagar.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn tedx-btn-primary"
             >
               Visit Official Website
-            </a>
-            <a
-              href="#about"
-              className="btn tedx-btn-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("about")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Learn More
             </a>
           </div>
         </div>
@@ -184,10 +172,10 @@ const TEDxIITGandhinagar = () => {
         <section className="tedx-nav-section" data-aos="fade-up">
           <div className="tedx-nav-tabs">
             {[
-              { id: "about", label: "About TEDx", icon: "📖" },
-              { id: "events", label: "Our Events", icon: "🎪" },
-              { id: "speakers", label: "Speakers", icon: "🎤" },
-              { id: "impact", label: "Our Impact", icon: "🌟" },
+              { id: "about", label: "About TEDx", icon: "" },
+              { id: "events", label: "Our Events", icon: "" },
+              { id: "speakers", label: "Speakers", icon: "" },
+              { id: "impact", label: "Our Impact", icon: "" },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -201,23 +189,7 @@ const TEDxIITGandhinagar = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="tedx-stats-section" data-aos="fade-up">
-          <div className="tedx-stats-grid">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="tedx-stat-item"
-                data-aos="zoom-in"
-                data-aos-delay={index * 100}
-              >
-                <div className="stat-icon">{stat.icon}</div>
-                <h3>{stat.number}</h3>
-                <p>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        
 
         {/* About Section */}
         {activeTab === "about" && (
@@ -533,21 +505,6 @@ const TEDxIITGandhinagar = () => {
               </a>
             </div>
 
-            <div className="tedx-newsletter">
-              <h3>Stay Updated</h3>
-              <p>
-                Subscribe to get notified about upcoming events and speaker
-                announcements.
-              </p>
-              <div className="newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="newsletter-input"
-                />
-                <button className="newsletter-btn">Subscribe</button>
-              </div>
-            </div>
           </div>
         </section>
       </div>

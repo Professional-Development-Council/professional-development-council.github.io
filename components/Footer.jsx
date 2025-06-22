@@ -232,65 +232,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div
-          style={{
-            background: "var(--gray-800)",
-            padding: "var(--space-xl)",
-            borderRadius: "var(--radius-lg)",
-            margin: "var(--space-xl) 0",
-            textAlign: "center",
-          }}
-        >
-          <h3 style={{ color: "white", marginBottom: "var(--space-md)" }}>
-            Stay Updated
-          </h3>
-          <p
-            style={{
-              color: "var(--gray-400)",
-              marginBottom: "var(--space-lg)",
-            }}
-          >
-            Get the latest updates on events, opportunities, and career
-            resources
-          </p>
-          <div
-            style={{
-              display: "flex",
-              maxWidth: "400px",
-              margin: "0 auto",
-              gap: "var(--space-sm)",
-            }}
-          >
-            <input
-              type="email"
-              placeholder="Enter your email"
-              style={{
-                flex: 1,
-                padding: "var(--space-sm) var(--space-md)",
-                border: "2px solid var(--gray-600)",
-                borderRadius: "var(--radius-md)",
-                background: "var(--gray-700)",
-                color: "white",
-                fontSize: "0.875rem",
-              }}
-            />
-            <button
-              style={{
-                background: "var(--gradient-primary)",
-                color: "white",
-                border: "none",
-                padding: "var(--space-sm) var(--space-lg)",
-                borderRadius: "var(--radius-md)",
-                cursor: "pointer",
-                fontWeight: "600",
-                fontSize: "0.875rem",
-              }}
-            >
-              Subscribe
-            </button>
-          </div>
-        </div>
+       
 
         {/* Copyright Section */}
         <div className="copyright-area">

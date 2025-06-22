@@ -1,16 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
-import { googleLogout, useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
+import React, { useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Logo from "../public/assets/images/PDC IITGN.jpg";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import ProfileContext from "./ProfileContext";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const { profile, login, logout } = useContext(ProfileContext);
-  const [user, setUser] = useState(null);
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   const handleClick = () => {
@@ -21,46 +18,22 @@ const Navbar = () => {
     setClick(false);
   };
 
-  const googleLogin = useGoogleLogin({
-    onSuccess: (codeResponse) => setUser(codeResponse),
-    onError: (error) => console.log("Login Failed:", error),
-  });
+  const handleSignIn = () => {
+    signIn("google", { callbackUrl: router.asPath });
+  };
 
-  useEffect(() => {
-    if (user) {
-      axios
-        .get(
-          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
-          {
-            headers: {
-              Authorization: `Bearer ${user.access_token}`,
-              Accept: "application/json",
-            },
-          },
-        )
-        .then((res) => {
-          const email = res.data.email;
-          if (email.endsWith("@iitgn.ac.in")) {
-            login(res.data);
-          } else {
-            alert('Only users with "@iitgn.ac.in" email domain are allowed');
-            googleLogout();
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [user, login]);
-
-  const logOut = () => {
-    googleLogout();
-    logout();
+  const handleSignOut = () => {
+    signOut({ callbackUrl: "/" });
     closeMenu();
   };
 
-  const handleDropdownClick = (e) => {
+  const handleProtectedNavigation = (e, href) => {
     e.preventDefault();
-    if (!profile) {
-      googleLogin();
+    if (!session) {
+      signIn("google", { callbackUrl: href });
+    } else {
+      router.push(href);
+      closeMenu();
     }
   };
 
@@ -166,7 +139,7 @@ const Navbar = () => {
               Material
             </button>
             <div className="dropdown-content" role="menu">
-              {profile ? (
+              {session ? (
                 <Link
                   href="/material/prep-mat"
                   className={`drop-nav-links ${router.pathname.includes("prep-mat") ? "drop-nav-links-active" : ""}`}
@@ -178,7 +151,9 @@ const Navbar = () => {
               ) : (
                 <button
                   className="drop-nav-links"
-                  onClick={handleDropdownClick}
+                  onClick={(e) =>
+                    handleProtectedNavigation(e, "/material/prep-mat")
+                  }
                   role="menuitem"
                   style={{
                     border: "none",
@@ -191,7 +166,7 @@ const Navbar = () => {
                   📚 PrepMat (Login Required)
                 </button>
               )}
-              {profile ? (
+              {session ? (
                 <Link
                   href="/material/placement-talks"
                   className={`drop-nav-links ${router.pathname.includes("placement-talks") ? "drop-nav-links-active" : ""}`}
@@ -203,7 +178,9 @@ const Navbar = () => {
               ) : (
                 <button
                   className="drop-nav-links"
-                  onClick={handleDropdownClick}
+                  onClick={(e) =>
+                    handleProtectedNavigation(e, "/material/placement-talks")
+                  }
                   role="menuitem"
                   style={{
                     border: "none",
@@ -298,35 +275,38 @@ const Navbar = () => {
           </div>
 
           <div className="nav-item nav-auth-item">
-            {profile ? (
+            {session?.user ? (
               <div className="profile-section">
                 <div className="profile-img">
                   <Image
-                    src={profile.picture}
+                    src={session.user.image}
                     width={40}
                     height={40}
                     className="profile-avatar"
-                    alt={`${profile.name} profile picture`}
+                    alt={`${session.user.name} profile picture`}
                   />
                   <div className="profile-data">
                     <div className="profile-info">
                       <p>
-                        <strong>👤 {profile.name}</strong>
+                        <strong>👤 {session.user.name}</strong>
                       </p>
-                      <p>📧 {profile.email}</p>
+                      <p>📧 {session.user.email}</p>
                     </div>
-                    <button className="login-btn logout-btn" onClick={logOut}>
+                    <button
+                      className="login-btn logout-btn"
+                      onClick={handleSignOut}
+                    >
                       🚪 Logout
                     </button>
                   </div>
                 </div>
-                <button className="phone_logout_btn" onClick={logOut}>
+                <button className="phone_logout_btn" onClick={handleSignOut}>
                   🚪 Logout
                 </button>
               </div>
             ) : (
-              <button className="login-btn" onClick={() => googleLogin()}>
-                🔐 Sign In
+              <button className="login-btn" onClick={handleSignIn}>
+                {status === "loading" ? "⏳ Loading..." : "🔐 Sign In"}
               </button>
             )}
           </div>

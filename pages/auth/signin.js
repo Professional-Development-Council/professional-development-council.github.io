@@ -89,18 +89,6 @@ export default function SignIn({ providers }) {
             <p>
               Please use your IIT Gandhinagar email (@iitgn.ac.in) to sign in.
             </p>
-            {/* {providers &&
-              Object.values(providers).map((provider) => (
-                <div key={provider.name} className="provider-container">
-                  <button
-                    onClick={() => handleSignIn(provider.id)}
-                    className="signin-button"
-                  >
-                    <span className="signin-icon">🔐</span>
-                    Sign in with {provider.name}
-                  </button>
-                </div>
-              ))} */}
               <div  className="provider-container">
                 <button
                   onClick={() => handleSignIn('google')}

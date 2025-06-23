@@ -270,24 +270,24 @@ export default function SignIn({ providers }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
 
-  // If user is already authenticated, redirect to home page
-  if (session) {
-    return {
-      redirect: {
-        destination: context.query.callbackUrl || "/",
-        permanent: false,
-      },
-    };
-  }
+//   // If user is already authenticated, redirect to home page
+//   if (session) {
+//     return {
+//       redirect: {
+//         destination: context.query.callbackUrl || "/",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  const providers = await getProviders();
+//   const providers = await getProviders();
 
-  return {
-    props: {
-      providers,
-    },
-  };
-}
+//   return {
+//     props: {
+//       providers,
+//     },
+//   };
+// }

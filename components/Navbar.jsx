@@ -91,6 +91,10 @@ const Navbar = () => {
               Material <i className="fa fa-angle-down" aria-hidden="true"></i>
             </button>
             <div className="dropdown-content">
+                <Link target='_blank' href="https://professional-development-council.vercel.app/" className="drop-nav-links" onClick={handleClick} >
+                  PDC 2025-26
+                </Link>
+              
               {profile ? (
                 <Link href="/material/prep-mat" className="drop-nav-links" onClick={handleClick} >
                   PrepMat
@@ -100,6 +104,7 @@ const Navbar = () => {
                   PrepMat
                 </Link>
               )}
+              
               {profile ? (
                 <Link href="/material/placement-talks" className="drop-nav-links" onClick={handleClick}>
                   Placement Talks Videos
@@ -109,6 +114,7 @@ const Navbar = () => {
                   Placement Talks Videos
                 </Link>
               )}
+              
               <Link target='_blank' href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0" className="drop-nav-links" onClick={handleClick}>
                 External Opportunities
               </Link>

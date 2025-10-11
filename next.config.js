@@ -9,18 +9,6 @@ const nextConfig = {
     NEXT_PUBLIC_GOOGLE_CLIENT_ID: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
   },
 
-  //---- added below add to just redirect to new website https://professional-development-council.vercel.app/
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: 'https://professional-development-council.vercel.app/',
-        permanent: true,
-      },
-    ];
-  },
-
-  //---
 }
 
 module.exports = nextConfig

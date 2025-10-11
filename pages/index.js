@@ -1,23 +1,66 @@
-import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    // Redirect immediately when the component mounts
+  const [showPopup, setShowPopup] = useState(true);
+
+  const handleOk = () => {
     window.location.href = "https://professional-development-council.vercel.app/";
-  }, []);
+  };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <p>
-        Redirecting to{" "}
-        <a href="https://professional-development-council.vercel.app/">
-          new PDC 2025-26
-        </a>
-        ...
-      </p>
+    <div>
+      {showPopup && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "#fff",
+              padding: "30px",
+              borderRadius: "10px",
+              maxWidth: "400px",
+              textAlign: "center",
+              boxShadow: "0px 4px 12px rgba(0,0,0,0.2)",
+            }}
+          >
+            <h2 style={{ marginBottom: "15px" }}>We’ve Moved 🚀</h2>
+            <p style={{ marginBottom: "20px" }}>
+              We have shifted to a new website.
+              <br />
+              Please click OK to continue.
+            </p>
+            <button
+              onClick={handleOk}
+              style={{
+                backgroundColor: "#2563eb",
+                color: "#fff",
+                padding: "10px 25px",
+                border: "none",
+                borderRadius: "6px",
+                fontSize: "16px",
+                cursor: "pointer",
+              }}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 
 // ---------------------------------------above code just to redirect new website
 
